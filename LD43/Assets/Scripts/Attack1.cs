@@ -17,7 +17,6 @@ public class Attack1 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}
 
 	//Attack function
@@ -42,6 +41,7 @@ public class Attack1 : MonoBehaviour {
 		}
 		eTime = 0.0f;
 		this.pc2d.enabled = true;
+		this.pc2d.offset = new Vector2(this.pc2d.offset.x, this.pc2d.offset.y + 0.0001f);
 		while(eTime < attackDuration){
 			eTime += Time.deltaTime;
 			yield return null;
@@ -53,14 +53,15 @@ public class Attack1 : MonoBehaviour {
 			yield return null;
 		}
 		this.sr.enabled = false;
+		this.pc2d.offset = new Vector2(this.pc2d.offset.x, this.pc2d.offset.y - 0.0001f);
 		this.attackRunning = false;
 	}
 
 	void OnTriggerEnter2D(Collider2D col){
 		Debug.Log(col.gameObject.name + " : " + gameObject.name + " : " + Time.time);
 		GoatScript ec = col.gameObject.GetComponent<GoatScript>();
-		EnemyCore edc = col.gameObject.GetComponent<EnemyCore>();
-		Debug.Log(edc);
-		ec.Hit();
+		if (ec != null){
+			ec.Hit();
+		}
 	}
 }
