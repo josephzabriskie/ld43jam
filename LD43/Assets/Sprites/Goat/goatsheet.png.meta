@@ -1,0 +1,345 @@
+fileFormatVersion: 2
+guid: 035fe7caf512d4d43bceed999960c4ab
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: goatsheet_0
+    21300002: goatsheet_1
+    21300004: goatsheet_2
+    21300006: goatsheet_3
+    21300008: goatsheet_4
+    21300010: goatsheet_5
+    21300012: goatsheet_6
+    21300014: goatsheet_7
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 128
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 128
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 128
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: goatsheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -5, y: 16}
+        - {x: -11, y: 12}
+        - {x: -11, y: -5}
+        - {x: -6, y: -16}
+        - {x: 6, y: -16}
+        - {x: 11, y: -6}
+        - {x: 11, y: 11}
+        - {x: 7, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68af75f68fe5637478a70453f2835288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goatsheet_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -5, y: 16}
+        - {x: -11, y: 12}
+        - {x: -11, y: -5}
+        - {x: -6, y: -16}
+        - {x: 6, y: -16}
+        - {x: 11, y: -6}
+        - {x: 11, y: 11}
+        - {x: 7, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfb3bd2c63d751947b2f32b756be89a0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goatsheet_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 7, y: 16}
+        - {x: -3, y: 16}
+        - {x: -12, y: 7}
+        - {x: -12, y: 5}
+        - {x: -9, y: -10}
+        - {x: -2, y: -16}
+        - {x: 3, y: -16}
+        - {x: 9, y: -10}
+        - {x: 10, y: -6}
+        - {x: 10, y: 10}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e45072f47f8bf44ba03331d8fb77002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goatsheet_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -5, y: 16}
+        - {x: -11, y: 12}
+        - {x: -11, y: -5}
+        - {x: -6, y: -16}
+        - {x: 6, y: -16}
+        - {x: 11, y: -6}
+        - {x: 11, y: 11}
+        - {x: 7, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27be7af41ff8b8c4a8375e9c5140484c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goatsheet_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 4, y: 16}
+        - {x: -4, y: 16}
+        - {x: -10, y: 10}
+        - {x: -10, y: -11}
+        - {x: -4, y: -16}
+        - {x: 5, y: -16}
+        - {x: 9, y: -10}
+        - {x: 12, y: 3}
+        - {x: 12, y: 9}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e174dbc89aada534698e7ef17e3cfd74
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goatsheet_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -5, y: 16}
+        - {x: -11, y: 12}
+        - {x: -11, y: -5}
+        - {x: -6, y: -16}
+        - {x: 6, y: -16}
+        - {x: 11, y: -6}
+        - {x: 11, y: 11}
+        - {x: 7, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b161d614a0a71140a54791620a0e28f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goatsheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -5, y: 16}
+        - {x: -11, y: 12}
+        - {x: -11, y: -5}
+        - {x: -6, y: -16}
+        - {x: 6, y: -16}
+        - {x: 11, y: -6}
+        - {x: 11, y: 11}
+        - {x: 7, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06a2fe68801bdff45bcdc3d9aa451820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goatsheet_7
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -5, y: 16}
+        - {x: -11, y: 12}
+        - {x: -11, y: -5}
+        - {x: -6, y: -16}
+        - {x: 6, y: -16}
+        - {x: 11, y: -6}
+        - {x: 11, y: 11}
+        - {x: 7, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72dc98a6a73ac314a89ceaecb54f587f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 8656049674671364cbbe8fdefa704f2c
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
