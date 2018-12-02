@@ -8,11 +8,13 @@ public class PlayerController : MonoBehaviour {
         public bool moving; // Is there either horizontal or vertical axis input
         public float angle; //Angle in radians of input (WASD or Joy)
         public bool attack;
-        public PlayerInput(bool m, float ia, bool a)
+        public bool block;
+        public PlayerInput(bool m, float ia, bool a, bool b)
         {
             this.moving = m;
             this.angle = ia;
             this.attack = a;
+            this.block = b;
         }
     }
 	PlayerInput pi;
@@ -31,7 +33,7 @@ public class PlayerController : MonoBehaviour {
 	
 	void Update () {
 		this.pi = getPlayerInput();
-        AttackUpdate();
+        InputProc();
 	}
 
 	void FixedUpdate(){
@@ -40,10 +42,11 @@ public class PlayerController : MonoBehaviour {
 	}
 
     //Check if we want to turn on our swing check
-    void AttackUpdate(){
+    void InputProc(){
         if(this.pi.attack){
-
+            this.anim.SetTrigger("Attack");
         }
+        this.anim.SetBool("Blocking", this.pi.block);
     }
 
     void RotatePlayer(){
@@ -64,21 +67,26 @@ public class PlayerController : MonoBehaviour {
             float y_mult = Mathf.Sin(pi.angle);
             y_mult = (Mathf.Abs(y_mult) > 0.001f) ? y_mult : 0;
             this.rb.velocity = new Vector2(this.maxSpeed * x_mult, this.maxSpeed * y_mult);
+            this.anim.SetBool("Moving", true);
         }
         else { // SLOW DOWN
             this.rb.velocity = new Vector2(0, 0);
+            this.anim.SetBool("Moving", false);
         }
     }
 
 	//Input collection
 	PlayerInput getPlayerInput()
     {
-        PlayerInput ret_pi = new PlayerInput(false, 0, false);
+        PlayerInput ret_pi = new PlayerInput(false, 0, false, false);
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
         ret_pi.angle = Mathf.Atan2(y, x);
         ret_pi.moving = (!(x == 0 && y == 0)) ? true : false;
-        ret_pi.attack = (Input.GetAxis("Attack") != 0) ? true : false;
+        // ret_pi.attack = (Input.GetAxis("Attack") != 0) ? true : false;
+        // ret_pi.block = (Input.GetAxis("Block") != 0) ? true : false;
+        ret_pi.attack = Input.GetMouseButtonDown(0);
+        ret_pi.block = Input.GetMouseButton(1);
         return ret_pi;
     }
 
