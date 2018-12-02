@@ -150,7 +150,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4607538821296548, guid: de8e5bbc4b6b611449f2244cd4b6fc57, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de8e5bbc4b6b611449f2244cd4b6fc57, type: 2}
@@ -17224,11 +17224,6 @@ TilemapRenderer:
   m_SortOrder: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
---- !u!4 &915521554 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4607538821296548, guid: de8e5bbc4b6b611449f2244cd4b6fc57,
-    type: 2}
-  m_PrefabInternal: {fileID: 350881247}
 --- !u!1 &940849814
 GameObject:
   m_ObjectHideFlags: 0
@@ -17239,6 +17234,7 @@ GameObject:
   - component: {fileID: 940849817}
   - component: {fileID: 940849816}
   - component: {fileID: 940849815}
+  - component: {fileID: 940849818}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -17300,12 +17296,24 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 940849814}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2.3452158}
+  m_LocalPosition: {x: -1.5, y: -1.5, z: -2.3452158}
   m_LocalScale: {x: 0.23452158, y: 0.23452158, z: 0.23452158}
   m_Children: []
-  m_Father: {fileID: 915521554}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &940849818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 940849814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4a97f6008c23f5498b63b9226b2a0dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  follow: {fileID: 1319405671}
 --- !u!1 &989886852
 GameObject:
   m_ObjectHideFlags: 0
@@ -20750,6 +20758,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1319405671 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1491477128112932, guid: de8e5bbc4b6b611449f2244cd4b6fc57,
+    type: 2}
+  m_PrefabInternal: {fileID: 350881247}
 --- !u!1 &1469179363
 GameObject:
   m_ObjectHideFlags: 0
@@ -21002,7 +21015,7 @@ Transform:
   - {fileID: 1469179364}
   - {fileID: 388004547}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!156049354 &1503534295
 Grid:
