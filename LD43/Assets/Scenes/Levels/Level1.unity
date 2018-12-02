@@ -152,11 +152,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1704406354602860, guid: de8e5bbc4b6b611449f2244cd4b6fc57, type: 2}
-      propertyPath: m_Layer
-      value: 9
+    - target: {fileID: 212366729170433202, guid: de8e5bbc4b6b611449f2244cd4b6fc57,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 212366729170433202, guid: de8e5bbc4b6b611449f2244cd4b6fc57, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: de8e5bbc4b6b611449f2244cd4b6fc57, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &388004546
@@ -172,7 +174,7 @@ GameObject:
   - component: {fileID: 388004550}
   - component: {fileID: 388004549}
   - component: {fileID: 388004548}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Spawns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,7 +385,7 @@ GameObject:
   - component: {fileID: 729194631}
   - component: {fileID: 729194630}
   - component: {fileID: 729194632}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16552,7 +16554,7 @@ GameObject:
   - component: {fileID: 1343758887}
   - component: {fileID: 1343758886}
   - component: {fileID: 1343758888}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Goat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16692,7 +16694,7 @@ GameObject:
   - component: {fileID: 1469179367}
   - component: {fileID: 1469179366}
   - component: {fileID: 1469179365}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Altars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
