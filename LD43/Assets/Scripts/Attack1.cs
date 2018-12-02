@@ -6,13 +6,10 @@ public class Attack1 : MonoBehaviour {
 	PolygonCollider2D pc2d;
 	bool attackRunning = false;
 	public float shotDelay = 0.5f;
-	SpriteRenderer sr;
 
 	void Start () {
 		this.pc2d = GetComponent<PolygonCollider2D>();
 		this.pc2d.enabled = false;
-		this.sr = GetComponent<SpriteRenderer>();
-		this.sr.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -33,7 +30,6 @@ public class Attack1 : MonoBehaviour {
 		const float attackDuration = 0.3f;
 		const float coolDown = 0.0f;
 		this.attackRunning = true;
-		this.sr.enabled = true;
 		float eTime = 0.0f; // elapsed time
 		while(eTime < windupDelay){
 			eTime += Time.deltaTime;
@@ -52,7 +48,6 @@ public class Attack1 : MonoBehaviour {
 			eTime += Time.deltaTime;
 			yield return null;
 		}
-		this.sr.enabled = false;
 		this.pc2d.offset = new Vector2(this.pc2d.offset.x, this.pc2d.offset.y - 0.0001f);
 		this.attackRunning = false;
 	}
