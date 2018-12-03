@@ -34,7 +34,6 @@ public class GoatScript : EnemyCore {
 	void OnCollisionEnter2D(Collision2D col){
 		//Debug.Log(col.gameObject.name + " : " + gameObject.name + " : " + Time.time);
 		if(col.gameObject.CompareTag("Player")){
-			Debug.Log("Garsh, they got us!");
 			if (this.runOnCatch){
 				this.pc(this); // Run specified pickup callback
 				Destroy(this.gameObject);
