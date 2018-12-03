@@ -64,7 +64,7 @@ public class LevelManager : MonoBehaviour {
 		Debug.Log("LevelManager: Moving from state: " + this.levelState.ToString());
 		switch(this.levelState){ //We're currently in X. Determine what the next state is and do setup for that state
 		case LevelState.init:
-			//Play Demon Talk Sound
+			//AudioManager.instance.Play("Demon_Talk");
 			this.levelState = LevelState.spawnplayer; // then set state to spawnplayer
 			StartCoroutine(this.DelayedNext(0.1f));
 			break;
@@ -96,7 +96,7 @@ public class LevelManager : MonoBehaviour {
 			}
 			break;
 		case LevelState.taketoaltar:
-				//AudioManager.instance.Play("DemonTalk");
+				//AudioManager.instance.Play("Demon_Laugh");
 				this.evileye.Fade(true, 4.5f);
 				this.levelState = LevelState.gameover;
 			break;
