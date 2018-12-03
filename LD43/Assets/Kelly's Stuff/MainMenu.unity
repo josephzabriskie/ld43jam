@@ -818,15 +818,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Main_Menu_Music
-    clip: {fileID: 0}
-    volume: 1
+    clip: {fileID: 8300000, guid: b253e146b47c69348adf1b29fdc30b10, type: 3}
+    volume: 0.101
     pitch: 1
     loop: 0
     MainAudio: {fileID: 0}
     source: {fileID: 0}
   - name: Background_Music
-    clip: {fileID: 0}
-    volume: 1
+    clip: {fileID: 8300000, guid: 37b6df6ffbf472246a420c10d2620ab3, type: 3}
+    volume: 0.092
     pitch: 1
     loop: 0
     MainAudio: {fileID: 0}
