@@ -36,6 +36,15 @@ public class LevelManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		this.NextState();
+		foreach(var goat in this.goats){ //Tell each goat who to call when caught
+			goat.pc = this.GoatCaught;
+		}
+	}
+
+	void GoatCaught(GoatScript goat){
+		Debug.Log("LevelManager:Goat Caught");
+		this.goats.Remove(goat);
+		StartCoroutine(this.DelayedNext(0.1f));
 	}
 	
 	// Update is called once per frame
@@ -49,22 +58,32 @@ public class LevelManager : MonoBehaviour {
 		case LevelState.init:
 			//Here, we'll only ever go to spawn
 			//Setup spawn conditions
-			this.SpawnAll();
 			this.levelState = LevelState.spawnplayer; // then set state to spawnplayer
 			StartCoroutine(this.DelayedNext(0.1f));
 			break;
 		case LevelState.spawnplayer:
 			//Setup for look for goat state
 			this.levelState = LevelState.lfg;
+			StartCoroutine(this.DelayedNext(0.1f));
 			break;
 		case LevelState.lfg:
+			this.levelState = LevelState.findgoat;
 			break;
 		case LevelState.findgoat:
+			if(this.goats.Count > 1){//Goats will still run
+				//We're on the last goat, this one won't run
+				this.levelState = LevelState.lfg;
+			}
+			else if(this.goats.Count == 1){ //We're on the last goat, this one won't run
+				this.goats[0].runOnCatch  = false;
+				this.levelState = LevelState.lfg;
+			}
+			else{//All goats gone...
+				this.SpawnAll();
+				this.levelState = LevelState.taketoaltar;
+			}
 			break;
 		case LevelState.taketoaltar:
-			foreach(var s in this.enemySpawners){
-				s.Spawn();
-			}
 			break;
 		case LevelState.gameover:
 			break;

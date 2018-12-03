@@ -15,6 +15,7 @@ public class CentaurScript : EnemyCore {
 	}
 
     public override void OnHit() {
+    	
         if (GetHealth() != 0)
         {
             DecrementHealth();
@@ -25,5 +26,6 @@ public class CentaurScript : EnemyCore {
 
     public override void OnKill() {
         Destroy(this);
+           }
+
     }
-}

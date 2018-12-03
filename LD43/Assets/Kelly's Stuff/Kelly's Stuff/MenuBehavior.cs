@@ -7,9 +7,13 @@ public class MenuBehavior : MonoBehaviour {
 
     public GameObject MainImage;
     public GameObject Button;
-	
-	// Update is called once per frame
-	void Update () {
+
+    public void Start()
+    {
+        FindObjectOfType<AudioManager>().Play("Main_Menu_Music");
+    }
+    // Update is called once per frame
+    void Update () {
 		
 	}
 
