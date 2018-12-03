@@ -6,7 +6,7 @@ public static class EnemyMovement {
 
 	// Use this for initialization
 
-    public static void moveTowardsTarget(GameObject player, Rigidbody2D enemy, float speed)
+    public static void MoveTowardsTarget(GameObject player, Rigidbody2D enemy, float speed)
     {
         Vector2 direction = (Vector2)player.transform.position - enemy.position;
 
@@ -17,4 +17,10 @@ public static class EnemyMovement {
 
         enemy.velocity = direction * speed;
     }
+
+    public static void JumpBackwards(Rigidbody2D enemy, float speed) { }
+
+    public static void Dash(GameObject player, Rigidbody2D enemy, float speed) { }
+
+    public static void Strafe(GameObject player, Rigidbody2D enemy, float speed) { }
 }

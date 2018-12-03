@@ -21,7 +21,7 @@ public class GoblinScript : EnemyCore {
 	// Update is called once per frame
 	void Update () {
 
-        EnemyMovement.moveTowardsTarget(player, rb, speed);
+        EnemyMovement.MoveTowardsTarget(player, rb, speed);
         
     }
 
