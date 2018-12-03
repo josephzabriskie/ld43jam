@@ -819,50 +819,50 @@ MonoBehaviour:
   sounds:
   - name: Main_Menu_Music
     clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 1
     loop: 0
     MainAudio: {fileID: 0}
     source: {fileID: 0}
-  - name: 
+  - name: Background_Music
     clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 1
     loop: 0
     MainAudio: {fileID: 0}
     source: {fileID: 0}
-  - name: 
+  - name: Player_Swing
     clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 1
     loop: 0
     MainAudio: {fileID: 0}
     source: {fileID: 0}
-  - name: 
+  - name: Player_Death
     clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 1
     loop: 0
     MainAudio: {fileID: 0}
     source: {fileID: 0}
-  - name: 
+  - name: Goblin_Stab
     clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 1
     loop: 0
     MainAudio: {fileID: 0}
     source: {fileID: 0}
-  - name: 
+  - name: Goblin_Idle
     clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 1
     loop: 0
     MainAudio: {fileID: 0}
     source: {fileID: 0}
-  - name: 
+  - name: Player_Hit
     clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 1
     loop: 0
     MainAudio: {fileID: 0}
     source: {fileID: 0}
