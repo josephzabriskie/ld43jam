@@ -883,7 +883,7 @@ MonoBehaviour:
   - name: Demon_Laugh
     clip: {fileID: 8300000, guid: 6bc92cf5f2d070047a4cf96cff24b5da, type: 3}
     volume: 1
-    pitch: 1
+    pitch: 0.7
     loop: 0
     MainAudio: {fileID: 0}
     source: {fileID: 0}
