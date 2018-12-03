@@ -44,8 +44,17 @@ public class GoblinScript : CreatureCore {
                 rb.velocity = -rb.velocity * 1;
                 DecrementHealth();
                 StartCoroutine("TakeDamage");
-                AudioManager.instance.Stop("Goblin_Idle");
-                AudioManager.instance.Play("Goblin_Idle");
+                if(GetHealth() == 1)
+                {
+                    //AudioManager.instance.Stop("Goblin_Idle");
+                    AudioManager.instance.Play("Goblin_Stab");
+                }
+                else
+                {
+                    //AudioManager.instance.Stop("Goblin_Idle");
+                    AudioManager.instance.Play("Goblin_Idle");
+                }
+                
             }
             else { OnKill(); }
         }
