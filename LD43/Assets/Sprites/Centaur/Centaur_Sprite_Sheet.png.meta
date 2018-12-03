@@ -1,0 +1,564 @@
+fileFormatVersion: 2
+guid: 4c3f2a40a6cec3242b66bcaeea6849b6
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Centaur_Sprite_Sheet_0
+    21300002: Centaur_Sprite_Sheet_1
+    21300004: Centaur_Sprite_Sheet_2
+    21300006: Centaur_Sprite_Sheet_3
+    21300008: Centaur_Sprite_Sheet_4
+    21300010: Centaur_Sprite_Sheet_5
+    21300012: Centaur_Sprite_Sheet_6
+    21300014: Centaur_Sprite_Sheet_7
+    21300016: Centaur_Sprite_Sheet_8
+    21300018: Centaur_Sprite_Sheet_9
+    21300020: Centaur_Sprite_Sheet_10
+    21300022: Centaur_Sprite_Sheet_11
+    21300024: Centaur_Sprite_Sheet_12
+    21300026: Centaur_Sprite_Sheet_13
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Centaur_Sprite_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 19, y: 13}
+        - {x: 13, y: 6}
+        - {x: -1, y: 11}
+        - {x: -11, y: 20}
+        - {x: -13, y: 6}
+        - {x: -7, y: 0}
+        - {x: -6, y: -26}
+        - {x: 2, y: -33}
+        - {x: 6, y: -30}
+        - {x: 9, y: -19}
+        - {x: 9, y: -5}
+        - {x: 19, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c73999c7d2bec674ea79bd5069ccf302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Centaur_Sprite_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 352
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 27, y: 8}
+        - {x: 10, y: 2}
+        - {x: -4, y: 8}
+        - {x: -6, y: 22}
+        - {x: -11, y: 8}
+        - {x: -7, y: 0}
+        - {x: -8, y: -25}
+        - {x: -3, y: -29}
+        - {x: 3, y: -36}
+        - {x: 4, y: -29}
+        - {x: 9, y: -17}
+        - {x: 8, y: -6}
+        - {x: 29, y: 4}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9be767ee687487146a3953406f56669e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Centaur_Sprite_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 352
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 17, y: 7}
+        - {x: 10, y: 6}
+        - {x: -6, y: 9}
+        - {x: -9, y: 16}
+        - {x: -13, y: 6}
+        - {x: -7, y: 0}
+        - {x: -6, y: -25}
+        - {x: 1, y: -32}
+        - {x: 8, y: -25}
+        - {x: 10, y: -3}
+        - {x: 22, y: 2}
+        - {x: 25, y: 17}
+        - {x: 20, y: 17}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f4c7367854d7b442ae4cd58211e4ef1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Centaur_Sprite_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 352
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 4, y: 16}
+        - {x: -10, y: 16}
+        - {x: -16, y: 6}
+        - {x: -10, y: -3}
+        - {x: -8, y: -23}
+        - {x: 0, y: -31}
+        - {x: 7, y: -25}
+        - {x: 11, y: 8}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f1fe5153d7283b449a52b9657fc0131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Centaur_Sprite_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 352
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: 15}
+        - {x: -20, y: 14}
+        - {x: -17, y: 2}
+        - {x: -7, y: -3}
+        - {x: -8, y: -23}
+        - {x: 2, y: -33}
+        - {x: 7, y: -25}
+        - {x: 11, y: 6}
+        - {x: 6, y: 15}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84a8203bfec9c594796c1ca73ad54c8b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Centaur_Sprite_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 264
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -9, y: 4}
+        - {x: -22, y: 17}
+        - {x: -22, y: 10}
+        - {x: -8, y: -6}
+        - {x: -8, y: -24}
+        - {x: -1, y: -33}
+        - {x: 6, y: -26}
+        - {x: 6, y: 1}
+        - {x: 10, y: 5}
+        - {x: 8, y: 14}
+        - {x: -4, y: 16}
+        - {x: -4, y: 10}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22a285970fd795e43888ea56f4557be7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Centaur_Sprite_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 264
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 12, y: 8}
+        - {x: 1, y: 16}
+        - {x: 3, y: 25}
+        - {x: -6, y: 18}
+        - {x: -11, y: 8}
+        - {x: -11, y: 1}
+        - {x: -8, y: -2}
+        - {x: -9, y: -28}
+        - {x: 0, y: -33}
+        - {x: 7, y: -27}
+        - {x: 7, y: -7}
+        - {x: 13, y: -3}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0e82cf1f58f8b0498c49de28602ebd5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Centaur_Sprite_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 264
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 7, y: 1}
+        - {x: 0, y: 7}
+        - {x: 14, y: 15}
+        - {x: 9, y: 19}
+        - {x: -10, y: 7}
+        - {x: -8, y: -1}
+        - {x: -7, y: -28}
+        - {x: 0, y: -33}
+        - {x: 8, y: -28}
+        - {x: 9, y: -8}
+        - {x: 22, y: -3}
+        - {x: 18, y: 1}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f96caef5d228b6f45b7f44228e94e653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Centaur_Sprite_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 264
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 3, y: 16}
+        - {x: -1, y: 18}
+        - {x: -11, y: 8}
+        - {x: -11, y: 2}
+        - {x: -7, y: 0}
+        - {x: -7, y: -26}
+        - {x: 0, y: -31}
+        - {x: 7, y: -26}
+        - {x: 8, y: -3}
+        - {x: 19, y: 4}
+        - {x: 19, y: 10}
+        - {x: 9, y: 5}
+        - {x: 1, y: 9}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 702fa2f41478c4f4eb5a2c4174a8e28f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Centaur_Sprite_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 264
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 8, y: -26}
+        - {x: 2, y: -32}
+        - {x: -6, y: -26}
+        - {x: -6, y: -1}
+        - {x: -11, y: 2}
+        - {x: -10, y: 11}
+        - {x: -5, y: 17}
+        - {x: -6, y: 6}
+        - {x: 12, y: 5}
+        - {x: 16, y: 11}
+        - {x: 16, y: 1}
+        - {x: 9, y: -3}
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb325c7fa98e88a4fb7633e503d3f8a2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Centaur_Sprite_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 88
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 1, y: -30}
+        - {x: -7, y: -26}
+        - {x: -8, y: -1}
+        - {x: -12, y: -1}
+        - {x: -12, y: 6}
+        - {x: 14, y: 6}
+        - {x: 14, y: -1}
+        - {x: 9, y: -1}
+        - {x: 8, y: -26}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69f2157ec2ef5d64b8dd573498b86a0a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Centaur_Sprite_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 88
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 1, y: -30}
+        - {x: -7, y: -27}
+        - {x: -7, y: -2}
+        - {x: -13, y: 3}
+        - {x: -12, y: 9}
+        - {x: -8, y: 7}
+        - {x: 8, y: 6}
+        - {x: 15, y: 6}
+        - {x: 13, y: -4}
+        - {x: 8, y: -5}
+        - {x: 8, y: -27}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6abfa3b44b8ff1d478c996cf80624b8b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Centaur_Sprite_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 88
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 1, y: -31}
+        - {x: -5, y: -27}
+        - {x: -9, y: -14}
+        - {x: -7, y: -1}
+        - {x: -12, y: -0.886673}
+        - {x: -12, y: 6}
+        - {x: 0, y: 10}
+        - {x: 14, y: 6}
+        - {x: 14, y: 0.7745209}
+        - {x: 7, y: -1}
+        - {x: 8, y: -14}
+        - {x: 6, y: -27}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f71dffc4aef99f3409cdaa9a79c8cb4d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Centaur_Sprite_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 88
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 1, y: -30}
+        - {x: -7, y: -26}
+        - {x: -7, y: -1}
+        - {x: -11, y: -3}
+        - {x: -13, y: 2}
+        - {x: -11, y: 6}
+        - {x: 0, y: 10}
+        - {x: 7, y: 6}
+        - {x: 13, y: 9}
+        - {x: 14, y: 2}
+        - {x: 8, y: -1}
+        - {x: 8, y: -27}
+      tessellationDetail: 0
+      bones: []
+      spriteID: be41dfcca7233a9459def9ebbe819373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 3c4fb1cc84ee44440b45f975a62a5d9b
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
