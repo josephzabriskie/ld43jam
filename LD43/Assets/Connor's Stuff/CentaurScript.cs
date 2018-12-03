@@ -26,9 +26,7 @@ public class CentaurScript : CreatureCore {
 	// Update is called once per frame
 	void Update () {
 
-        
         //if(!damagebreak)EnemyMovement.MoveTowardsTarget(player, rb, speed);
-        this.anim.SetBool("Run", true);
         if (damagebreak)
         {
             if (Time.time - startTime > 0.5f)
@@ -39,14 +37,19 @@ public class CentaurScript : CreatureCore {
     }
 
     IEnumerator CentaurRoutine() {
+        this.anim.SetBool("Moving", true);
         while (!ProximityCheck(player, rb, 5)) {
             EnemyMovement.MoveTowardsTarget(player, rb, speed);
+            
             yield return null;
         }
+        this.anim.SetBool("Run", true);
         while (!ProximityCheck(player, rb, 0.5f)){
             EnemyMovement.Dash(player, rb, speed);
-            yield return new WaitForSeconds(2);
+
+            yield return null;
         }
+        this.anim.SetBool("Moving", true);
             EnemyMovement.JumpBackwards(rb, speed);
         yield return new WaitForSeconds(0.5f);
         

@@ -38,7 +38,7 @@ public class PlayerController : CreatureCore {
         if(!damagebreak) InputProc();
         if (damagebreak)
         {
-            if (Time.time - startTime > 0.5f)
+            if (Time.time - startTime > 2f)
             {
                 damagebreak = false;
             }
@@ -112,7 +112,10 @@ public class PlayerController : CreatureCore {
             }
             else { OnKill(); }
         } }
-    public override void OnKill() { }
+    public override void OnKill() {
+        Debug.Log("Nice Job! You Died!");
+        this.anim.SetTrigger("Death");
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

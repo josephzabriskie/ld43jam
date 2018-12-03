@@ -9,13 +9,13 @@ public class GoblinScript : CreatureCore {
     public float rotateAmount = 2f;
     public float rotateSpeed = 2f;
     private float startTime;
-
+    Animator anim;
 	// Use this for initialization
 	void Start () {
         SetHealth(2);
         player = GameObject.FindGameObjectWithTag("Player");
         this.rb = this.GetComponent<Rigidbody2D>();
-        
+        this.GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -42,17 +42,6 @@ public class GoblinScript : CreatureCore {
                 rb.velocity = -rb.velocity * 1;
                 DecrementHealth();
                 StartCoroutine("TakeDamage");
-                if(GetHealth() == 1)
-                {
-                    //AudioManager.instance.Stop("Goblin_Idle");
-                    AudioManager.instance.Play("Goblin_Stab");
-                }
-                else
-                {
-                    //AudioManager.instance.Stop("Goblin_Idle");
-                    AudioManager.instance.Play("Goblin_Idle");
-                }
-                
             }
             else { OnKill(); }
         }
@@ -61,8 +50,8 @@ public class GoblinScript : CreatureCore {
     public override void OnKill()
     {
         Debug.Log("This goblin dead as hell!");
-        AudioManager.instance.Play("Goblin_Death");
-        Destroy(this.gameObject);
+        this.anim.SetTrigger("Dead");
+        Destroy(this.gameObject,0.5f);
     }
 
 
