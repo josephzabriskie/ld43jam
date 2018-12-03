@@ -822,35 +822,35 @@ MonoBehaviour:
     volume: 0.101
     pitch: 1
     loop: 0
-    MainAudio: {fileID: 0}
+    MainAudio: {fileID: 24300002, guid: 6b4f1a81b6be9ed44a28229336a1575c, type: 2}
     source: {fileID: 0}
   - name: Background_Music
     clip: {fileID: 8300000, guid: 37b6df6ffbf472246a420c10d2620ab3, type: 3}
     volume: 0.092
     pitch: 1
     loop: 0
-    MainAudio: {fileID: 0}
+    MainAudio: {fileID: 24300002, guid: 6b4f1a81b6be9ed44a28229336a1575c, type: 2}
     source: {fileID: 0}
   - name: Player_Swing
     clip: {fileID: 0}
     volume: 1
     pitch: 1
     loop: 0
-    MainAudio: {fileID: 0}
+    MainAudio: {fileID: 24300002, guid: 6b4f1a81b6be9ed44a28229336a1575c, type: 2}
     source: {fileID: 0}
   - name: Player_Death
     clip: {fileID: 0}
     volume: 1
     pitch: 1
     loop: 0
-    MainAudio: {fileID: 0}
+    MainAudio: {fileID: 24300002, guid: 6b4f1a81b6be9ed44a28229336a1575c, type: 2}
     source: {fileID: 0}
   - name: Goblin_Stab
     clip: {fileID: 0}
     volume: 1
     pitch: 1
     loop: 0
-    MainAudio: {fileID: 0}
+    MainAudio: {fileID: 24300002, guid: 6b4f1a81b6be9ed44a28229336a1575c, type: 2}
     source: {fileID: 0}
   - name: Goblin_Idle
     clip: {fileID: 0}
@@ -871,7 +871,7 @@ MonoBehaviour:
     volume: 0
     pitch: 0
     loop: 0
-    MainAudio: {fileID: 0}
+    MainAudio: {fileID: 24300002, guid: 6b4f1a81b6be9ed44a28229336a1575c, type: 2}
     source: {fileID: 0}
   - name: 
     clip: {fileID: 0}
@@ -1027,3 +1027,4 @@ MonoBehaviour:
     loop: 0
     MainAudio: {fileID: 0}
     source: {fileID: 0}
+  audiomixer: {fileID: 24300002, guid: 6b4f1a81b6be9ed44a28229336a1575c, type: 2}

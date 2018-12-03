@@ -1,4 +1,6 @@
 ﻿using UnityEngine.Audio;
+using System.Collections;
+using System.Collections.Generic;
 using System;
 using UnityEngine;
 
@@ -6,6 +8,7 @@ public class AudioManager : MonoBehaviour
 {
 
     public Sound[] sounds;
+    public AudioMixer audiomixer;
 
     public static bool updateSound;
     public static AudioManager instance;
@@ -70,6 +73,9 @@ public class AudioManager : MonoBehaviour
 
         s.source.Stop();
     }
+
+    
+    
 
     public void UpdateSound()
     {
