@@ -832,58 +832,58 @@ MonoBehaviour:
     MainAudio: {fileID: 24300002, guid: 6b4f1a81b6be9ed44a28229336a1575c, type: 2}
     source: {fileID: 0}
   - name: Player_Swing
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: bc33641ec07e479498f15af2dc06faa6, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     MainAudio: {fileID: 24300002, guid: 6b4f1a81b6be9ed44a28229336a1575c, type: 2}
     source: {fileID: 0}
   - name: Player_Death
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: bc33641ec07e479498f15af2dc06faa6, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     MainAudio: {fileID: 24300002, guid: 6b4f1a81b6be9ed44a28229336a1575c, type: 2}
     source: {fileID: 0}
   - name: Goblin_Stab
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 3f22239230ba2d743a1a7b8b52d161e6, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     MainAudio: {fileID: 24300002, guid: 6b4f1a81b6be9ed44a28229336a1575c, type: 2}
     source: {fileID: 0}
   - name: Goblin_Idle
-    clip: {fileID: 0}
-    volume: 1
+    clip: {fileID: 8300000, guid: 2a37a3e67482dcc4fb771a7fa7ea1e77, type: 3}
+    volume: 0.681
+    pitch: 1
+    loop: 0
+    MainAudio: {fileID: 0}
+    source: {fileID: 0}
+  - name: Goblin_Death
+    clip: {fileID: 8300000, guid: c6bb20d3d9220e74d936d66e3e68c2ba, type: 3}
+    volume: 0.723
     pitch: 1
     loop: 0
     MainAudio: {fileID: 0}
     source: {fileID: 0}
   - name: Player_Hit
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 4701b25a57691f641bc0c1db3e650045, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    MainAudio: {fileID: 24300002, guid: 6b4f1a81b6be9ed44a28229336a1575c, type: 2}
+    source: {fileID: 0}
+  - name: Demon_Talk
+    clip: {fileID: 8300000, guid: f302504832fec3f48bfd95518d4c3a4a, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     MainAudio: {fileID: 0}
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    loop: 0
-    MainAudio: {fileID: 24300002, guid: 6b4f1a81b6be9ed44a28229336a1575c, type: 2}
-    source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    loop: 0
-    MainAudio: {fileID: 0}
-    source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - name: Demon_Laugh
+    clip: {fileID: 8300000, guid: 6bc92cf5f2d070047a4cf96cff24b5da, type: 3}
+    volume: 1
+    pitch: 1
     loop: 0
     MainAudio: {fileID: 0}
     source: {fileID: 0}
