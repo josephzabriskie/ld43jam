@@ -14,11 +14,16 @@ public class CentaurScript : EnemyCore {
         GetHealth();
 	}
 
-    protected override void OnHit() {
-        DecrementHealth();
+    public override void OnHit() {
+        if (GetHealth() != 0)
+        {
+            DecrementHealth();
+        }
+        else { OnKill(); }
+
     }
 
-    protected override void OnKill() {
-        IncrementHealth();
+    public override void OnKill() {
+        Destroy(this);
     }
 }
