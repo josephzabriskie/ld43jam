@@ -19,12 +19,12 @@ public class GoatScript : EnemyCore {
 		this.OnHit();
 	}
 
-	protected override void OnHit() {
+	public override void OnHit() {
         DecrementHealth();
 		this.sr.color = Color.red;
     }
 
-    protected override void OnKill() {
+    public override void OnKill() {
         Debug.LogError("OnKill not implemented");
     }
 }

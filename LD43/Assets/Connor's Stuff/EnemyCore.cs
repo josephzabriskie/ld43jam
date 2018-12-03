@@ -26,7 +26,7 @@ public abstract class EnemyCore : MonoBehaviour {
 
     protected void SetHealth(int life) { health = life; }
 
-    protected abstract void OnHit();
+    public abstract void OnHit();
 
-    protected abstract void OnKill();
+    public abstract void OnKill();
 }
