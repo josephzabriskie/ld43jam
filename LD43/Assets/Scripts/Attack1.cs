@@ -54,7 +54,7 @@ public class Attack1 : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col){
 		Debug.Log(col.gameObject.name + " : " + gameObject.name + " : " + Time.time);
-		EnemyCore ec = col.gameObject.GetComponent<EnemyCore>();
+		CreatureCore ec = col.gameObject.GetComponent<CreatureCore>();
 		if (ec != null){
 			ec.OnHit();
 		}

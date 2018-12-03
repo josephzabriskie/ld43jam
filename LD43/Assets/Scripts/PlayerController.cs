@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : CreatureCore {
 
 	public struct PlayerInput{
         public bool moving; // Is there either horizontal or vertical axis input
@@ -24,20 +24,30 @@ public class PlayerController : MonoBehaviour {
 	Rigidbody2D rb;
     Animator anim;
     Attack1 a1;
+    private float startTime;
 
 	void Start () {
 		this.rb = this.GetComponent<Rigidbody2D>();
         this.anim = this.GetComponent<Animator>();
         this.a1 = this.GetComponentInChildren<Attack1>();
+
+        SetHealth(4);
 	}
 	
 	void Update () {
 		this.pi = getPlayerInput();
-        InputProc();
-	}
+        if(!damagebreak) InputProc();
+        if (damagebreak)
+        {
+            if (Time.time - startTime > 0.5f)
+            {
+                damagebreak = false;
+            }
+        }
+    }
 
 	void FixedUpdate(){
-		movementCalc();
+		if(!damagebreak)movementCalc();
         RotatePlayer();
 	}
 
@@ -90,11 +100,28 @@ public class PlayerController : MonoBehaviour {
         return ret_pi;
     }
 
-    private int DecrementHealth() { this.health--; return this.health; }
+    public override void OnHit() {
+        if (!damagebreak)
+        {
+            startTime = Time.time;
+            damagebreak = true;
+            if (GetHealth() != 0)
+            {
+                rb.velocity = -rb.velocity * 5;
+                DecrementHealth();
+                StartCoroutine("TakeDamage");
+            }
+            else { OnKill(); }
+        } }
+    public override void OnKill() { }
 
-    private int IncrementHealth() { this.health++; return this.health; }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+        if (collision.gameObject.layer == 10) {
+            Debug.Log("I'm Hit!");
+            OnHit();
+            }
+        }
+    }
 
-    public int GetHealth() { return this.health; }
-
-    public void SetHealth(int life) { health = life; }
-}

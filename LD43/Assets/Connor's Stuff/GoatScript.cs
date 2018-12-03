@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoatScript : EnemyCore {
+public class GoatScript : CreatureCore {
 
 	SpriteRenderer sr;
 	public delegate void PickupCallback(GoatScript gs);
@@ -16,10 +16,6 @@ public class GoatScript : EnemyCore {
 	// Update is called once per frame
 	void Update () {
 		
-	}
-
-	public void Hit(){
-		this.OnHit();
 	}
 
 	public override void OnHit() {
@@ -39,7 +35,8 @@ public class GoatScript : EnemyCore {
 				Destroy(this.gameObject);
 			}
 			else{
-				this.sr.color = Color.green;
+				this.pc(this); // Run specified pickup callback
+				Destroy(this.gameObject);
 			}
 		}
 	}

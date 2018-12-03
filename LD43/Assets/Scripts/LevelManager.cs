@@ -21,7 +21,6 @@ public class LevelManager : MonoBehaviour {
 	public enum LevelState{
 		init,
 		spawnplayer,
-		lfg, //looking for goat
 		findgoat,
 		taketoaltar,
 		gameover
@@ -65,37 +64,39 @@ public class LevelManager : MonoBehaviour {
 		Debug.Log("LevelManager: Moving from state: " + this.levelState.ToString());
 		switch(this.levelState){ //We're currently in X. Determine what the next state is and do setup for that state
 		case LevelState.init:
-			this.playermsg.ShowMsgTime("Goats, I need 3 Goats. Bring them to my Altar...", 6.0f);
 			//Play Demon Talk Sound
 			this.levelState = LevelState.spawnplayer; // then set state to spawnplayer
-			this.evileye.Fade(false, 3.0f);
 			StartCoroutine(this.DelayedNext(0.1f));
 			break;
 		case LevelState.spawnplayer:
 			//Setup for look for goat state
-			this.levelState = LevelState.lfg;
+			this.levelState = LevelState.findgoat;
+			this.playermsg.ShowMsgTime("Goats... I need 3 Goats. Bring them to my Altar...", 5.0f);
+			this.evileye.Fade(false, 3.0f);
 			StartCoroutine(this.DelayedNext(0.1f));
 			break;
-		case LevelState.lfg:
-			this.levelState = LevelState.findgoat;
-			break;
 		case LevelState.findgoat:
-			if(this.goats.Count > 1){//Goats will still run
-				//We're on the last goat, this one won't run
-				this.levelState = LevelState.lfg;
+			if(this.goats.Count == 3){//No goats found, do nothing
+				this.levelState = LevelState.findgoat;
+			}
+			else if(this.goats.Count > 1){//Goats will still run
+				this.playermsg.ShowMsgTime("More... " + this.goats.Count + " more...", 3.0f);
+				this.levelState = LevelState.findgoat;
 			}
 			else if(this.goats.Count == 1){ //We're on the last goat, this one won't run
 				this.goats[0].runOnCatch  = false;
-				this.levelState = LevelState.lfg;
+				this.playermsg.ShowMsgTime("Last one...", 3.0f);
+				this.levelState = LevelState.findgoat;
 			}
 			else{//All goats gone...
+				this.playermsg.ShowMsgTime("Bring the Altar what it is due...", 3.0f);
 				this.SpawnAll();
 				this.altar.acceptingSacrifice = true;
 				this.levelState = LevelState.taketoaltar;
 			}
 			break;
 		case LevelState.taketoaltar:
-				//Play DemonLaugh
+				//AudioManager.instance.Play("DemonTalk");
 				this.evileye.Fade(true, 4.5f);
 				this.levelState = LevelState.gameover;
 			break;

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class EnemyCore : MonoBehaviour {
+public abstract class CreatureCore : MonoBehaviour {
     
     //Holds enemy health and other important values accosiated with all enemies
     private int health;
-    
+    protected bool damagebreak = false;
 
 	// Use this for initialization
 	void Start () {
@@ -29,4 +29,18 @@ public abstract class EnemyCore : MonoBehaviour {
     public abstract void OnHit();
 
     public abstract void OnKill();
+
+    IEnumerator TakeDamage()
+    {
+
+        while (damagebreak)
+        {
+
+            GetComponent<SpriteRenderer>().color = Color.red;
+            yield return new WaitForSeconds(0.05f);
+            GetComponent<SpriteRenderer>().color = Color.white;
+            yield return new WaitForSeconds(0.05f);
+        }
+
+    }
 }
