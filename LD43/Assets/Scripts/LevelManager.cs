@@ -28,6 +28,8 @@ public class LevelManager : MonoBehaviour {
 	}
 	//Things the manager controls
 	public List<Spawner> enemySpawners;
+	public TextBox playermsg;
+	public FadeScript evileye;
 
 	//Things the level manager's state depends upon
 	LevelState levelState = LevelState.init;
@@ -63,9 +65,10 @@ public class LevelManager : MonoBehaviour {
 		Debug.Log("LevelManager: Moving from state: " + this.levelState.ToString());
 		switch(this.levelState){ //We're currently in X. Determine what the next state is and do setup for that state
 		case LevelState.init:
-			//Here, we'll only ever go to spawn
-			//Setup spawn conditions
+			this.playermsg.ShowMsgTime("Goats, I need 3 Goats. Bring them to my Altar...", 6.0f);
+			//Play Demon Talk Sound
 			this.levelState = LevelState.spawnplayer; // then set state to spawnplayer
+			this.evileye.Fade(false, 3.0f);
 			StartCoroutine(this.DelayedNext(0.1f));
 			break;
 		case LevelState.spawnplayer:
@@ -92,6 +95,8 @@ public class LevelManager : MonoBehaviour {
 			}
 			break;
 		case LevelState.taketoaltar:
+				//Play DemonLaugh
+				this.evileye.Fade(true, 4.5f);
 				this.levelState = LevelState.gameover;
 			break;
 		case LevelState.gameover:
