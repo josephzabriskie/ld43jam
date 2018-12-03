@@ -5,6 +5,9 @@ using UnityEngine;
 public class GoatScript : EnemyCore {
 
 	SpriteRenderer sr;
+	public delegate void PickupCallback(GoatScript gs);
+	public PickupCallback pc = null;
+	public bool runOnCatch = true;
 
 	void Start () {
 		this.sr = GetComponent<SpriteRenderer>();	
@@ -26,5 +29,19 @@ public class GoatScript : EnemyCore {
 
     public override void OnKill() {
         Debug.LogError("OnKill not implemented");
-    }
+	}
+	
+	void OnCollisionEnter2D(Collision2D col){
+		//Debug.Log(col.gameObject.name + " : " + gameObject.name + " : " + Time.time);
+		if(col.gameObject.CompareTag("Player")){
+			Debug.Log("Garsh, they got us!");
+			if (this.runOnCatch){
+				this.pc(this); // Run specified pickup callback
+				Destroy(this.gameObject);
+			}
+			else{
+				this.sr.color = Color.green;
+			}
+		}
+	}
 }

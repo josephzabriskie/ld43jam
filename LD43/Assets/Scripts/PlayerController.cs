@@ -22,13 +22,11 @@ public class PlayerController : MonoBehaviour {
 	public float maxSpeed;
 	public bool allowMove;
 	Rigidbody2D rb;
-	SpriteRenderer sr;
     Animator anim;
     Attack1 a1;
 
 	void Start () {
 		this.rb = this.GetComponent<Rigidbody2D>();
-		this.sr = this.GetComponent<SpriteRenderer>();
         this.anim = this.GetComponent<Animator>();
         this.a1 = this.GetComponentInChildren<Attack1>();
 	}
