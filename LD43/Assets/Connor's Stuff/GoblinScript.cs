@@ -44,6 +44,8 @@ public class GoblinScript : CreatureCore {
                 rb.velocity = -rb.velocity * 1;
                 DecrementHealth();
                 StartCoroutine("TakeDamage");
+                AudioManager.instance.Stop("Goblin_Idle");
+                AudioManager.instance.Play("Goblin_Idle");
             }
             else { OnKill(); }
         }
@@ -52,6 +54,7 @@ public class GoblinScript : CreatureCore {
     public override void OnKill()
     {
         Debug.Log("This goblin dead as hell!");
+        AudioManager.instance.Play("Goblin_Death");
         Destroy(this.gameObject);
     }
 
