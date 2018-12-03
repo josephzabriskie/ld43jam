@@ -30,10 +30,10 @@ public abstract class CreatureCore : MonoBehaviour {
 
     public abstract void OnKill();
 
-    public bool ProximityCheck(GameObject player, Rigidbody2D rb, float activationDistance)
+    public bool ProximityCheck(Vector3 target, Rigidbody2D rb, float activationDistance)
     {
     
-            if (Vector3.Distance(player.transform.position, rb.transform.position) < activationDistance)
+            if (Vector3.Distance(target, rb.transform.position) < activationDistance)
             {
                 return true;
             }
