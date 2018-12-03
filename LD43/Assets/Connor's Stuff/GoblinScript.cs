@@ -9,10 +9,14 @@ public class GoblinScript : EnemyCore {
     public float rotateAmount = 2f;
     public float rotateSpeed = 2f;
     PolygonCollider2D col;
+    private bool damagebreak = false;
+    private bool knockbackCooldown = false;
+
+    private float startTime;
 
 	// Use this for initialization
 	void Start () {
-        SetHealth(3);
+        SetHealth(2);
         player = GameObject.FindGameObjectWithTag("Player");
         this.rb = this.GetComponent<Rigidbody2D>();
         
@@ -21,8 +25,14 @@ public class GoblinScript : EnemyCore {
 	// Update is called once per frame
 	void Update () {
 
-        EnemyMovement.MoveTowardsTarget(player, rb, speed);
-        
+        if(!damagebreak)EnemyMovement.MoveTowardsTarget(player, rb, speed);
+        if (damagebreak)
+        {
+            if (Time.time - startTime > 0.5f)
+            {
+                damagebreak = false;
+            }
+        }
     }
     public void Hit() {
         OnHit();
@@ -30,23 +40,40 @@ public class GoblinScript : EnemyCore {
     
 
     public override void OnHit() {
-
-        if (GetHealth() != 0) {
-            DecrementHealth();
+        Debug.Log("Goblin registered hit");
+        if (!damagebreak)            
+        {
+            startTime = Time.time;
+            damagebreak = true;
+            if (GetHealth() != 0)
+            {  
+                rb.velocity = -rb.velocity * 1;
+                knockbackCooldown = true;
+                DecrementHealth();
+                StartCoroutine("TakeDamage");
+            }
+            else { OnKill(); }
         }
-        else { OnKill(); }
     }
 
     public override void OnKill()
     {
-
-        Destroy(this);
+        Debug.Log("This goblin dead as hell!");
+        Destroy(this.gameObject);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.name == "player") {
-            Hit(); 
+    IEnumerator TakeDamage() {
+
+        while (damagebreak)
+        {
+
+            GetComponent<SpriteRenderer>().color = Color.red;
+            yield return new WaitForSeconds(0.05f);
+            GetComponent<SpriteRenderer>().color = Color.white;
+            yield return new WaitForSeconds(0.05f);
         }
+
     }
+
+ 
 }
