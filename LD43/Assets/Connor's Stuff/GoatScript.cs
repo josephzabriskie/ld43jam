@@ -39,7 +39,8 @@ public class GoatScript : EnemyCore {
 				Destroy(this.gameObject);
 			}
 			else{
-				this.sr.color = Color.green;
+				this.pc(this); // Run specified pickup callback
+				Destroy(this.gameObject);
 			}
 		}
 	}

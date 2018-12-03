@@ -8,19 +8,20 @@ public class TextBox : MonoBehaviour {
 	Text msg;
 	Image img;
 	public GameObject panel;
-	bool running = false;
+	Coroutine c = null;
 	void Start () {
 		this.msg = GetComponentInChildren<Text>();
-		this.msg.text = " ";
 		this.img = GetComponentInChildren<Image>();
-		this.panel.SetActive(false);
+		this.ResetComponents();
 	}
 
 	public void ShowMsgTime(string msg, float time){
-		if(!this.running){
-			this.running = true;
-			StartCoroutine(this.ShowMsgTimeIE(msg, time));
+		if(this.c != null){
+			StopCoroutine(this.c);
+			this.ResetComponents();
 		}
+		c = StartCoroutine(this.ShowMsgTimeIE(msg, time));
+		
 	}
 
 	IEnumerator ShowMsgTimeIE(string msg, float time){
@@ -31,8 +32,13 @@ public class TextBox : MonoBehaviour {
 			eTime += Time.deltaTime;
 			yield return null;
 		}
+		this.ResetComponents();
+		this.c = null;
+	}
+
+	void ResetComponents(){
+		this.msg.text = " ";
 		this.panel.SetActive(false);
-		running = false;
 	}
 	
 
