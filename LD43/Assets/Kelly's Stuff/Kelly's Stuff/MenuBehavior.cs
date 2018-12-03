@@ -28,6 +28,7 @@ public class MenuBehavior : MonoBehaviour {
         FindObjectOfType<GameManager>().FadeToBlack();
         yield return new WaitForSeconds(1.5f);
         FindObjectOfType<GameManager>().ResetFade();
+        AudioManager.instance.Stop("Main_Menu_Music");
         MainImage.SetActive(false);
         Button.SetActive(false);
         SceneManager.LoadScene("Level1");
