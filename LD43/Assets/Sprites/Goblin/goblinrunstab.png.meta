@@ -1,18 +1,12 @@
 fileFormatVersion: 2
-guid: b0889ad1e00f25f488d744d0e7b64964
+guid: 8441cfa15a86bde499c18abe9703f252
 TextureImporter:
   fileIDToRecycleName:
-    21300000: GoblinSheet_0
-    21300002: GoblinSheet_1
-    21300004: GoblinSheet_2
-    21300006: GoblinSheet_3
-    21300008: GoblinSheet_4
-    21300010: GoblinSheet_5
-    21300012: GoblinSheet_6
-    21300014: GoblinSheet_7
-    21300016: GoblinSheet_8
-    21300018: GoblinSheet_9
-    21300020: GoblinSheet_10
+    21300000: goblinrunstab_0
+    21300002: goblinrunstab_1
+    21300004: goblinrunstab_2
+    21300006: goblinrunstab_3
+    21300008: goblinrunstab_4
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -106,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GoblinSheet_0
+      name: goblinrunstab_0
       rect:
         serializedVersion: 2
         x: 0
@@ -114,19 +108,30 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 7, y: 10}
+        - {x: 6, y: 10}
+        - {x: 3, y: 7}
+        - {x: -8, y: 5}
+        - {x: -11, y: 3}
+        - {x: -11, y: -6}
+        - {x: -7, y: -10}
+        - {x: 6, y: -10}
+        - {x: 9, y: -5}
+        - {x: 11, y: 3}
+        - {x: 10, y: 7}
       tessellationDetail: 0
       bones: []
-      spriteID: 4da9322888eaaa84083b03f7ff0300ab
+      spriteID: 0584646be8c8f7442bd56319e6a3678e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoblinSheet_1
+      name: goblinrunstab_1
       rect:
         serializedVersion: 2
         x: 32
@@ -134,19 +139,27 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -10, y: 13}
+        - {x: -11, y: 12}
+        - {x: -11, y: -9}
+        - {x: -7, y: -10}
+        - {x: 7, y: -10}
+        - {x: 10, y: -4}
+        - {x: 10, y: 7}
+        - {x: 5, y: 13}
       tessellationDetail: 0
       bones: []
-      spriteID: fa84c7e0e227eb9418c4696129f6e4bb
+      spriteID: 0dadc6d21f9d51b4287ee3619605e305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoblinSheet_2
+      name: goblinrunstab_2
       rect:
         serializedVersion: 2
         x: 64
@@ -154,19 +167,28 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -4, y: 10}
+        - {x: -8, y: 10}
+        - {x: -12, y: 8}
+        - {x: -12, y: -7}
+        - {x: -6, y: -10}
+        - {x: 9, y: -10}
+        - {x: 10, y: -6}
+        - {x: 10, y: 4}
+        - {x: 5, y: 5}
       tessellationDetail: 0
       bones: []
-      spriteID: d4aeef6bf43245549aef010954b1d7bb
+      spriteID: 1adc2e419f3c853409388470075ea617
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoblinSheet_3
+      name: goblinrunstab_3
       rect:
         serializedVersion: 2
         x: 0
@@ -174,19 +196,24 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -10, y: -10}
+        - {x: 11, y: -10}
+        - {x: 11, y: 9}
+        - {x: -11, y: 9}
+        - {x: -11, y: -8}
       tessellationDetail: 0
       bones: []
-      spriteID: dad0223a5ffdfd54e99c1526dba75b6d
+      spriteID: 6912d5dbec6923c46aa5cfc5d2370fad
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoblinSheet_4
+      name: goblinrunstab_4
       rect:
         serializedVersion: 2
         x: 32
@@ -194,133 +221,21 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 4, y: 10}
+        - {x: -11, y: 4}
+        - {x: -11, y: -8}
+        - {x: -7, y: -10}
+        - {x: 7, y: -10}
+        - {x: 11, y: -3}
+        - {x: 11, y: 8}
+        - {x: 9, y: 10}
       tessellationDetail: 0
       bones: []
-      spriteID: 1ae6a79820688bc42b33430f8b37208e
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GoblinSheet_5
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9e1f374ed2336f04598f88a9f3c93f81
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GoblinSheet_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9add8d8f46219f742b2d4f79b344a988
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GoblinSheet_7
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5c00ad3157bd2bc4ab6d4ce8c40705ac
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GoblinSheet_8
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 377f6176b54ef8f4a81fb2ea97a9bd4c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GoblinSheet_9
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f863614336e893419685d3f197d8c6f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GoblinSheet_10
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f61806bb6dc07f54d9278fe86e746e33
+      spriteID: ea42a50ff41c1624e89023a7588e9d01
       vertices: []
       indices: 
       edges: []
@@ -328,7 +243,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f138432fa735741438401573a44f9132
+    spriteID: 51276f627ea8a4e44a3c97d0e337a6ca
     vertices: []
     indices: 
     edges: []
