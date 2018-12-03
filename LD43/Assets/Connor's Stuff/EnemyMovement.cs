@@ -18,7 +18,11 @@ public static class EnemyMovement {
         enemy.velocity = direction * speed;
     }
 
-    public static void JumpBackwards(Rigidbody2D enemy, float speed) { }
+    public static void JumpBackwards(Rigidbody2D enemy, float speed) {
+
+        enemy.velocity = -enemy.velocity * 5;
+
+    }
 
     public static void Dash(GameObject player, Rigidbody2D enemy, float speed) { }
 

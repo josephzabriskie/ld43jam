@@ -8,8 +8,6 @@ public class GoblinScript : CreatureCore {
     public float speed = 2f;
     public float rotateAmount = 2f;
     public float rotateSpeed = 2f;
-    PolygonCollider2D col;
-    private bool knockbackCooldown = false;
     private float startTime;
 
 	// Use this for initialization

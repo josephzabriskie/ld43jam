@@ -18,7 +18,6 @@ public class PlayerController : CreatureCore {
         }
     }
 	PlayerInput pi;
-    private int health;
 	public float maxSpeed;
 	public bool allowMove;
 	Rigidbody2D rb;

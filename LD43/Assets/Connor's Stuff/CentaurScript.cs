@@ -9,7 +9,6 @@ public class CentaurScript : CreatureCore {
     public float rotateAmount = 2f;
     public float rotateSpeed = 2f;
     PolygonCollider2D col;
-    private bool damagebreak = false;
     private float startTime;
 
     Animator anim;
@@ -21,15 +20,38 @@ public class CentaurScript : CreatureCore {
         this.a1 = this.GetComponentInChildren<Attack1>();
         this.rb = this.GetComponent<Rigidbody2D>();
         SetHealth(3);
+        StartCoroutine("CentaurRoutine");
     }
 	
 	// Update is called once per frame
 	void Update () {
-        
-        EnemyMovement.MoveTowardsTarget(player, rb, speed);
-        this.anim.SetTrigger("Run");
-	}
 
+        
+        //if(!damagebreak)EnemyMovement.MoveTowardsTarget(player, rb, speed);
+        this.anim.SetBool("Run", true);
+        if (damagebreak)
+        {
+            if (Time.time - startTime > 0.5f)
+            {
+                damagebreak = false;
+            }
+        }
+    }
+
+    IEnumerator CentaurRoutine() {
+        while (!ProximityCheck(player, rb, 5)) {
+            EnemyMovement.MoveTowardsTarget(player, rb, speed);
+            yield return null;
+        }
+        while (!ProximityCheck(player, rb, 0.5f)){
+            EnemyMovement.Dash(player, rb, speed);
+            yield return new WaitForSeconds(2);
+        }
+            EnemyMovement.JumpBackwards(rb, speed);
+        yield return new WaitForSeconds(0.5f);
+        
+        EnemyMovement.Strafe(player, rb, speed);
+    }
     public override void OnHit() {
 
         if (!damagebreak)
@@ -38,7 +60,7 @@ public class CentaurScript : CreatureCore {
             damagebreak = true;
             if (GetHealth() != 0)
             {
-                rb.velocity = -rb.velocity * 1;
+                rb.velocity = -rb.velocity * 2;
                 DecrementHealth();
                 StartCoroutine("TakeDamage");
             }
@@ -48,7 +70,7 @@ public class CentaurScript : CreatureCore {
     }
 
     public override void OnKill() {
-        Destroy(this);
+        Destroy(this.gameObject);
            }
 
     }
