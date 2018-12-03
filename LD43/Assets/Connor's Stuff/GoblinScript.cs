@@ -10,13 +10,14 @@ public class GoblinScript : EnemyCore {
     public float rotateSpeed = 2f;
     PolygonCollider2D col;
     private bool damagebreak = false;
-    private bool knockbackCooldown = false;
+    private Color Red;
+    private Color White;
 
     private float startTime;
 
 	// Use this for initialization
 	void Start () {
-        SetHealth(2);
+        SetHealth(3);
         player = GameObject.FindGameObjectWithTag("Player");
         this.rb = this.GetComponent<Rigidbody2D>();
         
@@ -25,14 +26,8 @@ public class GoblinScript : EnemyCore {
 	// Update is called once per frame
 	void Update () {
 
-        if(!damagebreak)EnemyMovement.MoveTowardsTarget(player, rb, speed);
-        if (damagebreak)
-        {
-            if (Time.time - startTime > 0.5f)
-            {
-                damagebreak = false;
-            }
-        }
+        EnemyMovement.MoveTowardsTarget(player, rb, speed);
+        
     }
     public void Hit() {
         OnHit();
@@ -40,17 +35,19 @@ public class GoblinScript : EnemyCore {
     
 
     public override void OnHit() {
-        Debug.Log("Goblin registered hit");
-        if (!damagebreak)            
+
+        if (damagebreak) {
+            if (Time.time - startTime > 2) {
+                damagebreak = false;
+        }
+        }
+        if (!damagebreak)
         {
             startTime = Time.time;
-            damagebreak = true;
             if (GetHealth() != 0)
-            {  
-                rb.velocity = -rb.velocity * 1;
-                knockbackCooldown = true;
+            {
                 DecrementHealth();
-                StartCoroutine("TakeDamage");
+                StartCoroutine("Take Damage");
             }
             else { OnKill(); }
         }
@@ -58,22 +55,25 @@ public class GoblinScript : EnemyCore {
 
     public override void OnKill()
     {
-        Debug.Log("This goblin dead as hell!");
-        Destroy(this.gameObject);
+
+        Destroy(this);
     }
 
     IEnumerator TakeDamage() {
 
         while (damagebreak)
         {
-
-            GetComponent<SpriteRenderer>().color = Color.red;
-            yield return new WaitForSeconds(0.05f);
-            GetComponent<SpriteRenderer>().color = Color.white;
-            yield return new WaitForSeconds(0.05f);
+            GetComponent<SpriteRenderer>().color = Red;
+            yield return new WaitForSeconds(0.3f);
+            GetComponent<SpriteRenderer>().color = White;
+            yield return new WaitForSeconds(0.3f);
         }
-
     }
 
- 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "player") {
+            Hit(); 
+        }
+    }
 }
