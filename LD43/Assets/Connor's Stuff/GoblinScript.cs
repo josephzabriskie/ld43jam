@@ -2,16 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoblinScript : EnemyCore {
+public class GoblinScript : CreatureCore {
     GameObject player;
     Rigidbody2D rb;
     public float speed = 2f;
     public float rotateAmount = 2f;
     public float rotateSpeed = 2f;
     PolygonCollider2D col;
-    private bool damagebreak = false;
     private bool knockbackCooldown = false;
-
     private float startTime;
 
 	// Use this for initialization
@@ -34,13 +32,9 @@ public class GoblinScript : EnemyCore {
             }
         }
     }
-    public void Hit() {
-        OnHit();
-    }
-    
 
     public override void OnHit() {
-        Debug.Log("Goblin registered hit");
+        
         if (!damagebreak)            
         {
             startTime = Time.time;
@@ -48,7 +42,6 @@ public class GoblinScript : EnemyCore {
             if (GetHealth() != 0)
             {  
                 rb.velocity = -rb.velocity * 1;
-                knockbackCooldown = true;
                 DecrementHealth();
                 StartCoroutine("TakeDamage");
             }
@@ -62,18 +55,7 @@ public class GoblinScript : EnemyCore {
         Destroy(this.gameObject);
     }
 
-    IEnumerator TakeDamage() {
 
-        while (damagebreak)
-        {
-
-            GetComponent<SpriteRenderer>().color = Color.red;
-            yield return new WaitForSeconds(0.05f);
-            GetComponent<SpriteRenderer>().color = Color.white;
-            yield return new WaitForSeconds(0.05f);
-        }
-
-    }
 
  
 }
