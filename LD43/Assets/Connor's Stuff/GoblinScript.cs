@@ -21,12 +21,15 @@ public class GoblinScript : EnemyCore {
 	// Update is called once per frame
 	void Update () {
 
-        EnemyMovement.moveTowardsTarget(player, rb, speed);
+        EnemyMovement.MoveTowardsTarget(player, rb, speed);
         
     }
-
+    public void Hit() {
+        OnHit();
+    }
     
-    protected override void OnHit() {
+
+    public override void OnHit() {
 
         if (GetHealth() != 0) {
             DecrementHealth();
@@ -34,7 +37,16 @@ public class GoblinScript : EnemyCore {
         else { OnKill(); }
     }
 
-    protected override void OnKill()
+    public override void OnKill()
     {
+
+        Destroy(this);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "player") {
+            Hit(); 
+        }
     }
 }

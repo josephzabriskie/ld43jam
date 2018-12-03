@@ -54,9 +54,9 @@ public class Attack1 : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col){
 		Debug.Log(col.gameObject.name + " : " + gameObject.name + " : " + Time.time);
-		GoatScript ec = col.gameObject.GetComponent<GoatScript>();
+		EnemyCore ec = col.gameObject.GetComponent<EnemyCore>();
 		if (ec != null){
-			ec.Hit();
+			ec.OnHit();
 		}
 	}
 }
