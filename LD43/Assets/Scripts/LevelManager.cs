@@ -32,6 +32,7 @@ public class LevelManager : MonoBehaviour {
 	//Things the level manager's state depends upon
 	LevelState levelState = LevelState.init;
 	public List<GoatScript> goats;
+	public AltarScript altar;
 
 	// Use this for initialization
 	void Start () {
@@ -39,11 +40,17 @@ public class LevelManager : MonoBehaviour {
 		foreach(var goat in this.goats){ //Tell each goat who to call when caught
 			goat.pc = this.GoatCaught;
 		}
+		this.altar.sc = this.SacrificeMade;
 	}
 
 	void GoatCaught(GoatScript goat){
 		Debug.Log("LevelManager:Goat Caught");
 		this.goats.Remove(goat);
+		StartCoroutine(this.DelayedNext(0.1f));
+	}
+
+	void SacrificeMade(){
+		Debug.Log("LevelManager:Sacrifice Made");
 		StartCoroutine(this.DelayedNext(0.1f));
 	}
 	
@@ -80,10 +87,12 @@ public class LevelManager : MonoBehaviour {
 			}
 			else{//All goats gone...
 				this.SpawnAll();
+				this.altar.acceptingSacrifice = true;
 				this.levelState = LevelState.taketoaltar;
 			}
 			break;
 		case LevelState.taketoaltar:
+				this.levelState = LevelState.gameover;
 			break;
 		case LevelState.gameover:
 			break;
