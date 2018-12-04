@@ -9,6 +9,7 @@ public class CentaurScript : CreatureCore {
     public float rotateAmount = 2f;
     public float rotateSpeed = 2f;
     PolygonCollider2D col;
+    private bool isActive  = false;
     private float startTime;
 
     Animator anim;
@@ -25,8 +26,7 @@ public class CentaurScript : CreatureCore {
 	
 	// Update is called once per frame
 	void Update () {
-
-        //if(!damagebreak)EnemyMovement.MoveTowardsTarget(player, rb, speed);
+      
         if (damagebreak)
         {
             if (Time.time - startTime > 0.5f)
@@ -37,23 +37,46 @@ public class CentaurScript : CreatureCore {
     }
 
     IEnumerator CentaurRoutine() {
+        while (!ProximityCheck(player.transform.position, rb, 5))
+            yield return null;
+
         this.anim.SetBool("Moving", true);
-        while (!ProximityCheck(player, rb, 5)) {
+        while (!ProximityCheck(player.transform.position, rb, 4)) {
             EnemyMovement.MoveTowardsTarget(player, rb, speed);
             
             yield return null;
         }
         this.anim.SetBool("Run", true);
-        while (!ProximityCheck(player, rb, 0.5f)){
-            EnemyMovement.Dash(player, rb, speed);
-
+        
+        Vector3 target = player.transform.position;
+        while (!ProximityCheck(player.transform.position, rb, 1f)){
+                
+                EnemyMovement.Dash(target, rb, speed);
+            if (ProximityCheck(target, rb, 0.3f)){
+                target = player.transform.position;
+                rb.velocity = rb.velocity * 0;
+            }
+                yield return null;
+        }
+        if (this.a1.Attack())
+        {
+            this.anim.SetTrigger("Attack");
+            rb.velocity = rb.velocity * 0;
+        }
+       
+        yield return new WaitForSeconds(1);
+        this.anim.SetBool("Run", false);
+        this.anim.SetBool("Moving", true);
+        EnemyMovement.JumpBackwards(player, rb, speed * 2);
+        yield return new WaitForSeconds(0.5f);
+        rb.velocity = rb.velocity * 0;
+        float startStrafe = Time.time;
+        while (Time.time - startStrafe > 8) {
+            EnemyMovement.Strafe(player, rb, speed, startStrafe);
             yield return null;
         }
-        this.anim.SetBool("Moving", true);
-            EnemyMovement.JumpBackwards(rb, speed);
-        yield return new WaitForSeconds(0.5f);
-        
-        EnemyMovement.Strafe(player, rb, speed);
+        rb.velocity = rb.velocity * 0;
+        StartCoroutine("CentaurRoutine");
     }
     public override void OnHit() {
 
