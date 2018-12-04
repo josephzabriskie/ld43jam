@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class LevelManager : MonoBehaviour {
 
@@ -29,6 +31,8 @@ public class LevelManager : MonoBehaviour {
 	public List<Spawner> enemySpawners;
 	public TextBox playermsg;
 	public FadeScript evileye;
+	public GameManager gm;
+	public PlayerController pc;
 
 	//Things the level manager's state depends upon
 	LevelState levelState = LevelState.init;
@@ -42,6 +46,10 @@ public class LevelManager : MonoBehaviour {
 			goat.pc = this.GoatCaught;
 		}
 		this.altar.sc = this.SacrificeMade;
+		this.gm = FindObjectOfType<GameManager>();
+		AudioManager.instance.Play("Background_Music");
+		this.pc = FindObjectOfType<PlayerController>();
+		this.pc.dc = this.PlayerKilled;
 	}
 
 	void GoatCaught(GoatScript goat){
@@ -55,6 +63,12 @@ public class LevelManager : MonoBehaviour {
 		StartCoroutine(this.DelayedNext(0.1f));
 	}
 	
+	void PlayerKilled(){
+		Debug.Log("the player's dead");
+		this.levelState = LevelState.taketoaltar;
+		NextState();
+	}
+
 	// Update is called once per frame
 	void Update () {
 		
@@ -64,7 +78,7 @@ public class LevelManager : MonoBehaviour {
 		Debug.Log("LevelManager: Moving from state: " + this.levelState.ToString());
 		switch(this.levelState){ //We're currently in X. Determine what the next state is and do setup for that state
 		case LevelState.init:
-			//AudioManager.instance.Play("Demon_Talk");
+			AudioManager.instance.Play("Demon_Talk");
 			this.levelState = LevelState.spawnplayer; // then set state to spawnplayer
 			StartCoroutine(this.DelayedNext(0.1f));
 			break;
@@ -96,16 +110,26 @@ public class LevelManager : MonoBehaviour {
 			}
 			break;
 		case LevelState.taketoaltar:
-				//AudioManager.instance.Play("Demon_Laugh");
+				AudioManager.instance.Play("Demon_Laugh");
 				this.evileye.Fade(true, 4.5f);
 				this.levelState = LevelState.gameover;
+				StartCoroutine(ToMainMenu());
 			break;
 		case LevelState.gameover:
+				StartCoroutine(ToMainMenu());
 			break;
 		default:
 			break;
 		}
 		Debug.Log("LevelManager: Ended in state: " + this.levelState.ToString());
+	}
+
+	IEnumerator ToMainMenu(){
+		Debug.Log("FADING");
+		this.gm.FadeToBlack();
+		yield return new WaitForSeconds(1.5f);
+		SceneManager.LoadScene("MainMenu");
+		AudioManager.instance.Stop("Background_Music");
 	}
 
 	void SpawnAll(){

@@ -28,6 +28,9 @@ public class PlayerController : CreatureCore {
     private float startTime;
     private bool isAlive = true;
 
+    public delegate void DeadCallback();
+	public DeadCallback dc = null;
+
 	void Start () {
 		this.rb = this.GetComponent<Rigidbody2D>();
         this.anim = this.GetComponent<Animator>();
@@ -128,6 +131,7 @@ public class PlayerController : CreatureCore {
         this.anim.SetTrigger("Death");
         isAlive = false;
         deathPosition = this.transform.position;
+        this.dc();
         
     }
 
