@@ -16922,7 +16922,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   follow: {fileID: 1319405671}
-  CameraHeight: -5
 --- !u!4 &986528977 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4855472211625818, guid: f8494ca4df8c14b40a8a4e70357582de,
