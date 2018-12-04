@@ -49,12 +49,11 @@ public class CentaurScript : CreatureCore {
         this.anim.SetBool("Run", true);
         
         Vector3 target = player.transform.position;
-        while (!ProximityCheck(player.transform.position, rb, 1f)){
+        while (!ProximityCheck(player.transform.position, rb, 3f)){
                 
                 EnemyMovement.Dash(target, rb, speed);
-            if (ProximityCheck(target, rb, 2f)){
-                target = player.transform.position;
-                rb.velocity = rb.velocity * 0;
+            if (ProximityCheck(target, rb, 4f)){
+                target = player.transform.position;              
             }
                 yield return null;
         }
@@ -64,7 +63,7 @@ public class CentaurScript : CreatureCore {
             rb.velocity = rb.velocity * 2;
         }
        
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         rb.velocity = rb.velocity * 0;
         this.anim.SetBool("Run", false);
         this.anim.SetBool("Moving", true);
