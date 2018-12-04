@@ -15,7 +15,7 @@ public class GoblinScript : CreatureCore {
     private bool isActive = false;
 	// Use this for initialization
 	void Start () {
-        SetHealth(2);
+        SetHealth(1);
         player = GameObject.FindGameObjectWithTag("Player");
         this.rb = this.GetComponent<Rigidbody2D>();
         this.anim = this.GetComponent<Animator>();
@@ -24,11 +24,11 @@ public class GoblinScript : CreatureCore {
 	
 	// Update is called once per frame
 	void Update () {
-        if(ProximityCheck(player.transform.position, rb, 3))
+        if(ProximityCheck(player.transform.position, rb, 7))
         {
             isActive = true;
         }
-        if (!damagebreak && isAlive )EnemyMovement.MoveTowardsTarget(player, rb, speed);
+        if (!damagebreak && isAlive && isActive)EnemyMovement.MoveTowardsTarget(player, rb, speed);
         if (damagebreak)
         {
             if (Time.time - startTime > 0.5f)

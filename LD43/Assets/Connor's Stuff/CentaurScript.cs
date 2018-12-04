@@ -20,7 +20,7 @@ public class CentaurScript : CreatureCore {
         player = GameObject.FindGameObjectWithTag("Player");
         this.a1 = this.GetComponentInChildren<Attack1>();
         this.rb = this.GetComponent<Rigidbody2D>();
-        SetHealth(3);
+        SetHealth(2);
         StartCoroutine("CentaurRoutine");
     }
 	
@@ -37,7 +37,7 @@ public class CentaurScript : CreatureCore {
     }
 
     IEnumerator CentaurRoutine() {
-        while (!ProximityCheck(player.transform.position, rb, 5))
+        while (!ProximityCheck(player.transform.position, rb, 7))
             yield return null;
 
         this.anim.SetBool("Moving", true);
@@ -52,7 +52,7 @@ public class CentaurScript : CreatureCore {
         while (!ProximityCheck(player.transform.position, rb, 1f)){
                 
                 EnemyMovement.Dash(target, rb, speed);
-            if (ProximityCheck(target, rb, 0.3f)){
+            if (ProximityCheck(target, rb, 2f)){
                 target = player.transform.position;
                 rb.velocity = rb.velocity * 0;
             }
@@ -61,10 +61,11 @@ public class CentaurScript : CreatureCore {
         if (this.a1.Attack())
         {
             this.anim.SetTrigger("Attack");
-            rb.velocity = rb.velocity * 0;
+            rb.velocity = rb.velocity * 2;
         }
        
         yield return new WaitForSeconds(1);
+        rb.velocity = rb.velocity * 0;
         this.anim.SetBool("Run", false);
         this.anim.SetBool("Moving", true);
         EnemyMovement.JumpBackwards(player, rb, speed * 2);

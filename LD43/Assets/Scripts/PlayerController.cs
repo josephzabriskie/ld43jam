@@ -23,22 +23,30 @@ public class PlayerController : CreatureCore {
 	Rigidbody2D rb;
     Animator anim;
     Attack1 a1;
+    Sheild block;
+    Vector2 deathPosition;
     private float startTime;
+    private bool isAlive = true;
 
 	void Start () {
 		this.rb = this.GetComponent<Rigidbody2D>();
         this.anim = this.GetComponent<Animator>();
         this.a1 = this.GetComponentInChildren<Attack1>();
+        this.block = this.GetComponentInChildren<Sheild>();
 
         SetHealth(4);
 	}
 	
 	void Update () {
+        if (!isAlive) {
+            this.transform.position = deathPosition;
+            this.transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
 		this.pi = getPlayerInput();
-        if(!damagebreak) InputProc();
+        if(!damagebreak && isAlive) InputProc();
         if (damagebreak)
         {
-            if (Time.time - startTime > 2f)
+            if (Time.time - startTime > 0.1f)
             {
                 damagebreak = false;
             }
@@ -46,7 +54,7 @@ public class PlayerController : CreatureCore {
     }
 
 	void FixedUpdate(){
-		if(!damagebreak)movementCalc();
+		if(!damagebreak && isAlive)movementCalc();
         RotatePlayer();
 	}
 
@@ -55,8 +63,11 @@ public class PlayerController : CreatureCore {
         if(this.pi.attack && this.a1.Attack()){
             this.anim.SetTrigger("Attack");
         }
+       
         this.anim.SetBool("Blocking", this.pi.block);
-    }
+        this.block.Block();
+        
+        }
 
     void RotatePlayer(){
         const float rotationOffset = -90.0f;
@@ -115,12 +126,15 @@ public class PlayerController : CreatureCore {
     public override void OnKill() {
         Debug.Log("Nice Job! You Died!");
         this.anim.SetTrigger("Death");
+        isAlive = false;
+        deathPosition = this.transform.position;
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         
-        if (collision.gameObject.layer == 10) {
+        if (collision.gameObject.layer == 10 && collision.otherCollider.gameObject.layer != 14  && isAlive || collision.gameObject.layer == 11 && collision.otherCollider.gameObject.layer != 14 && isAlive) {
             Debug.Log("I'm Hit!");
             OnHit();
             }
