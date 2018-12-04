@@ -65,6 +65,7 @@ public class PlayerController : CreatureCore {
     void InputProc(){
         if(this.pi.attack && this.a1.Attack()){
             this.anim.SetTrigger("Attack");
+            AudioManager.instance.Play("Player_Hit");
         }
        
         this.anim.SetBool("Blocking", this.pi.block);
@@ -128,6 +129,7 @@ public class PlayerController : CreatureCore {
         } }
     public override void OnKill() {
         Debug.Log("Nice Job! You Died!");
+        AudioManager.instance.Play("Player_Death");
         this.anim.SetTrigger("Death");
         isAlive = false;
         deathPosition = this.transform.position;

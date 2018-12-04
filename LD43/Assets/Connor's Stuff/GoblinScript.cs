@@ -39,7 +39,6 @@ public class GoblinScript : CreatureCore {
     }
 
     public override void OnHit() {
-        
         if (!damagebreak && isAlive)            
         {
             startTime = Time.time;
@@ -48,6 +47,7 @@ public class GoblinScript : CreatureCore {
             {  
                 rb.velocity = -rb.velocity * 1;
                 DecrementHealth();
+                AudioManager.instance.Play("Goblin_Idle");
                 StartCoroutine("TakeDamage");
             }
             else { OnKill(); }
@@ -58,6 +58,7 @@ public class GoblinScript : CreatureCore {
     {
         Debug.Log("This goblin dead as hell!");
         this.anim.SetTrigger("Dead");
+        AudioManager.instance.Play("Goblin_Death");
         isAlive = false;
         rb.velocity = rb.velocity * 0;
         rb.angularVelocity = 0;
