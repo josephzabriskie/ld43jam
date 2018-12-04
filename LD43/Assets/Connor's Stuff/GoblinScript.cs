@@ -10,25 +10,18 @@ public class GoblinScript : CreatureCore {
     public float rotateSpeed = 2f;
     private float startTime;
     Animator anim;
-    Collider2D col;
-    private bool isAlive = true;
-    private bool isActive = false;
 	// Use this for initialization
 	void Start () {
         SetHealth(2);
         player = GameObject.FindGameObjectWithTag("Player");
         this.rb = this.GetComponent<Rigidbody2D>();
-        this.anim = this.GetComponent<Animator>();
-        this.col = this.GetComponent<Collider2D>();
+        this.GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if(ProximityCheck(player.transform.position, rb, 3))
-        {
-            isActive = true;
-        }
-        if (!damagebreak && isAlive )EnemyMovement.MoveTowardsTarget(player, rb, speed);
+
+        if(!damagebreak)EnemyMovement.MoveTowardsTarget(player, rb, speed);
         if (damagebreak)
         {
             if (Time.time - startTime > 0.5f)
@@ -40,7 +33,7 @@ public class GoblinScript : CreatureCore {
 
     public override void OnHit() {
         
-        if (!damagebreak && isAlive)            
+        if (!damagebreak)            
         {
             startTime = Time.time;
             damagebreak = true;
@@ -58,11 +51,7 @@ public class GoblinScript : CreatureCore {
     {
         Debug.Log("This goblin dead as hell!");
         this.anim.SetTrigger("Dead");
-        isAlive = false;
-        rb.velocity = rb.velocity * 0;
-        rb.angularVelocity = 0;
-        col.enabled = false;
-        Destroy(this.gameObject,5f);
+        Destroy(this.gameObject,0.5f);
     }
 
 
