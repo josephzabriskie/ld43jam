@@ -86,6 +86,7 @@ public class LevelManager : MonoBehaviour {
 			//Setup for look for goat state
 			this.levelState = LevelState.findgoat;
 			this.playermsg.ShowMsgTime("Goats... I need 3 Goats. Bring them to my Altar...", 5.0f);
+			AudioManager.instance.Play("Demon_Talk");
 			this.evileye.Fade(false, 3.0f);
 			StartCoroutine(this.DelayedNext(0.1f));
 			break;
@@ -95,15 +96,18 @@ public class LevelManager : MonoBehaviour {
 			}
 			else if(this.goats.Count > 1){//Goats will still run
 				this.playermsg.ShowMsgTime("More... " + this.goats.Count + " more...", 3.0f);
+				AudioManager.instance.Play("Demon_Talk");
 				this.levelState = LevelState.findgoat;
 			}
 			else if(this.goats.Count == 1){ //We're on the last goat, this one won't run
 				this.goats[0].runOnCatch  = false;
 				this.playermsg.ShowMsgTime("Last one...", 3.0f);
+				AudioManager.instance.Play("Demon_Talk");
 				this.levelState = LevelState.findgoat;
 			}
 			else{//All goats gone...
 				this.playermsg.ShowMsgTime("Bring the Altar what it is due...", 3.0f);
+				AudioManager.instance.Play("Demon_Talk");
 				this.SpawnAll();
 				this.altar.acceptingSacrifice = true;
 				this.levelState = LevelState.taketoaltar;
