@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: 0e6059b97868a1f4a868fbd420047671
+guid: 81fdd742cda708346a76b60ce7b7dda0
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Knight_Idle_0
-    21300002: Knight_Idle_1
-    21300004: Knight_Idle_2
-    21300006: Knight_Idle_3
-    21300008: Knight_Idle_4
-    21300010: Knight_Idle_5
-    21300012: Knight_Idle_6
-    21300014: Knight_Idle_7
-    21300016: Knight_Idle_8
-    21300018: Knight_Idle_9
+    21300000: Knight_Run_0
+    21300002: Knight_Run_1
+    21300004: Knight_Run_2
+    21300006: Knight_Run_3
+    21300008: Knight_Run_4
+    21300010: Knight_Run_5
+    21300012: Knight_Run_6
+    21300014: Knight_Run_7
+    21300016: Knight_Run_8
+    21300018: Knight_Run_9
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Knight_Idle_0
+      name: Knight_Run_0
       rect:
         serializedVersion: 2
         x: 0
@@ -113,19 +113,19 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10b88a06f1c7ee04a814c6ffae085a0e
+      spriteID: fcf6d1ee1d71e324eadbef36041ea96a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Knight_Idle_1
+      name: Knight_Run_1
       rect:
         serializedVersion: 2
         x: 256
@@ -133,19 +133,19 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f72d882522778494899477097ce3fb08
+      spriteID: 96f4aca95d9b0f1409b4901721079006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Knight_Idle_2
+      name: Knight_Run_2
       rect:
         serializedVersion: 2
         x: 512
@@ -153,19 +153,19 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4fd4a475febf8cc428f30a9758159eef
+      spriteID: 147d16a78f38a234e9a69f2f4bd5baf0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Knight_Idle_3
+      name: Knight_Run_3
       rect:
         serializedVersion: 2
         x: 768
@@ -173,19 +173,19 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a6007f2ffbba5a4b972152bb9900bf7
+      spriteID: 84a054314e4335e4e9c1d8ba3548b567
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Knight_Idle_4
+      name: Knight_Run_4
       rect:
         serializedVersion: 2
         x: 0
@@ -193,19 +193,19 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08dea30fcb03e83439bc1ae4bb0ed9eb
+      spriteID: 9246a949bba1a3d40898df07d3096d97
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Knight_Idle_5
+      name: Knight_Run_5
       rect:
         serializedVersion: 2
         x: 256
@@ -213,19 +213,19 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f85763228cd7684891039d0a808fc21
+      spriteID: 63cc709c585496d4681119f64b1ff263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Knight_Idle_6
+      name: Knight_Run_6
       rect:
         serializedVersion: 2
         x: 512
@@ -233,19 +233,19 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e85c48904211e13449648be8d8e81b37
+      spriteID: 613993ff53dad43429f615c84623cbb0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Knight_Idle_7
+      name: Knight_Run_7
       rect:
         serializedVersion: 2
         x: 768
@@ -253,39 +253,39 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f86ef62ea788a904998dfdc423e6a635
+      spriteID: f2e901cbfe51b5e40af98c65918be781
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Knight_Idle_8
+      name: Knight_Run_8
       rect:
         serializedVersion: 2
-        x: 4
+        x: 0
         y: 0
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: efef2748282348942a0fceadb94ed0c6
+      spriteID: 366dca74625993044be255588eb6364d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Knight_Idle_9
+      name: Knight_Run_9
       rect:
         serializedVersion: 2
         x: 256
@@ -293,13 +293,13 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2c8576e821e4ed4cada639fc7b50bea
+      spriteID: 4732f7963b27add4fa4d406475f4d0f8
       vertices: []
       indices: 
       edges: []
@@ -307,7 +307,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c385ce27b23757942b1748174f05e412
+    spriteID: 73f6384d48cfff145bd28247e5807eac
     vertices: []
     indices: 
     edges: []
