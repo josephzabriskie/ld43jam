@@ -58,10 +58,10 @@ public class GoblinScript : CreatureCore {
     {
         Debug.Log("This goblin dead as hell!");
         this.anim.SetTrigger("Dead");
-        AudioManager.instance.Play("Goblin_Death");
         isAlive = false;
         rb.velocity = rb.velocity * 0;
         rb.angularVelocity = 0;
+        AudioManager.instance.Play("Goblin_Death");
         col.enabled = false;
         Destroy(this.gameObject,5f);
     }
