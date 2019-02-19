@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Attack1 : MonoBehaviour {
 	PolygonCollider2D pc2d;
+    Rigidbody2D rb;
 	bool attackRunning = false;
 	public float shotDelay = 0.5f;
 
 	void Start () {
 		this.pc2d = GetComponent<PolygonCollider2D>();
 		this.pc2d.enabled = false;
+        rb = this.transform.parent.GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
@@ -26,9 +28,9 @@ public class Attack1 : MonoBehaviour {
 	}
 
 	IEnumerator AttackIE() {
-		const float windupDelay = 0.2f;
-		const float attackDuration = 0.3f;
-		const float coolDown = 0.0f;
+		const float windupDelay = 0.32f;
+		const float attackDuration = 0.125f;
+		const float coolDown = 0.375f;
 		this.attackRunning = true;
 		float eTime = 0.0f; // elapsed time
 		while(eTime < windupDelay){
@@ -48,7 +50,9 @@ public class Attack1 : MonoBehaviour {
 			eTime += Time.deltaTime;
 			yield return null;
 		}
-		this.pc2d.offset = new Vector2(this.pc2d.offset.x, this.pc2d.offset.y - 0.0001f);
+        this.rb.freezeRotation = false; ;
+        this.rb.isKinematic = false;
+        this.pc2d.offset = new Vector2(this.pc2d.offset.x, this.pc2d.offset.y - 0.0001f);
 		this.attackRunning = false;
 	}
 
