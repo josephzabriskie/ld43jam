@@ -84,7 +84,8 @@ public class PlayerController : CreatureCore {
 
 	//Update char velocity
 	void movementCalc(){
-        if (this.pi.moving && this.allowMove){
+        if (this.pi.moving && this.allowMove && !this.a1.attackRunning)
+        {
             //Debug.Log (string.Format("x:{0}, y:{1}",Mathf.Cos (pi.angle), Mathf.Sin (pi.angle)));
             float x_mult = Mathf.Cos(pi.angle);
             x_mult = (Mathf.Abs(x_mult) > 0.001f) ? x_mult : 0;
@@ -93,8 +94,12 @@ public class PlayerController : CreatureCore {
             this.rb.velocity = new Vector2(this.maxSpeed * x_mult, this.maxSpeed * y_mult);
             this.anim.SetBool("Moving", true);
         }
+        else if( this.a1.attackRunning)
+        {
+
+        }
         else { // SLOW DOWN
-            this.rb.velocity = new Vector2(0, 0);
+            this.rb.velocity = new Vector2(0,0);
             this.anim.SetBool("Moving", false);
         }
     }
