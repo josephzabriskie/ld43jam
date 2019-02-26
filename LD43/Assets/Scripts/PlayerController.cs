@@ -67,9 +67,16 @@ public class PlayerController : CreatureCore {
             this.anim.SetTrigger("Attack");
             AudioManager.instance.Play("Player_Swing");
         }
-       
-        this.anim.SetBool("Blocking", this.pi.block);
-        this.block.Block();
+       else if( this.pi.block && this.block.Block())
+        {
+            this.anim.SetBool("Blocking", this.pi.block);
+            this.block.Block();
+        }
+        else if( !this.pi.block)
+        {
+            this.anim.SetBool("Blocking", this.pi.block);
+        }
+        
         
         }
 
@@ -84,7 +91,7 @@ public class PlayerController : CreatureCore {
 
 	//Update char velocity
 	void movementCalc(){
-        if (this.pi.moving && this.allowMove && !this.a1.attackRunning)
+        if (this.pi.moving && this.allowMove && !this.a1.movementFreeze)
         {
             //Debug.Log (string.Format("x:{0}, y:{1}",Mathf.Cos (pi.angle), Mathf.Sin (pi.angle)));
             float x_mult = Mathf.Cos(pi.angle);
@@ -94,9 +101,9 @@ public class PlayerController : CreatureCore {
             this.rb.velocity = new Vector2(this.maxSpeed * x_mult, this.maxSpeed * y_mult);
             this.anim.SetBool("Moving", true);
         }
-        else if( this.a1.attackRunning)
+        else if( this.a1.movementFreeze)
         {
-
+            //We are letting Attack1 handle the movement of the attack animation
         }
         else { // SLOW DOWN
             this.rb.velocity = new Vector2(0,0);
@@ -124,9 +131,11 @@ public class PlayerController : CreatureCore {
         {
             startTime = Time.time;
             damagebreak = true;
+            if(this.a1.movementFreeze) { return; }
             if (GetHealth() != 0)
             {
-                rb.velocity = -rb.velocity * 5;
+                rb.velocity = Vector2.zero;
+                rb.AddRelativeForce(new Vector2(0,-600));
                 DecrementHealth();
                 AudioManager.instance.Play("Player_Hit");
                 StartCoroutine("TakeDamage");

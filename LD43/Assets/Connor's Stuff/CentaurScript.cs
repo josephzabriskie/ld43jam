@@ -79,7 +79,7 @@ public class CentaurScript : CreatureCore {
         StartCoroutine("CentaurRoutine");
     }
     public override void OnHit() {
-        //rb.freezeRotation = true;
+        rb.freezeRotation = true;
         if (!damagebreak)
         {
             startTime = Time.time;
