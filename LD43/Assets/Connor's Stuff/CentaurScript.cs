@@ -11,14 +11,15 @@ public class CentaurScript : CreatureCore {
     PolygonCollider2D col;
     private bool isActive  = false;
     private float startTime;
+    public GameObject roomNodes;
 
     Animator anim;
-    Attack1 a1;
+    CentaurAttack a1;
     // Use this for initialization
     void Start () {
         this.anim = this.GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
-        this.a1 = this.GetComponentInChildren<Attack1>();
+        this.a1 = this.GetComponentInChildren<CentaurAttack>();
         this.rb = this.GetComponent<Rigidbody2D>();
         SetHealth(2);
         StartCoroutine("CentaurRoutine");
@@ -38,29 +39,29 @@ public class CentaurScript : CreatureCore {
 
     IEnumerator CentaurRoutine() {
         while (!ProximityCheck(player.transform.position, rb, 7))
-            yield return null;
+            yield return new WaitForFixedUpdate();
 
-        this.anim.SetBool("Moving", true);
-        while (!ProximityCheck(player.transform.position, rb, 4)) {
+       /* this.anim.SetBool("Moving", true);
+        while (!ProximityCheck(player.transform.position, rb, 5)) {
             EnemyMovement.MoveTowardsTarget(player, rb, speed);
             
-            yield return null;
+            yield return new WaitForFixedUpdate();
         }
         this.anim.SetBool("Run", true);
         
         Vector3 target = player.transform.position;
-        while (!ProximityCheck(player.transform.position, rb, 3f)){
+        while (!ProximityCheck(player.transform.position, rb, 4f)){
                 
                 EnemyMovement.Dash(target, rb, speed);
             if (ProximityCheck(target, rb, 4f)){
                 target = player.transform.position;              
             }
-                yield return null;
+                yield return new WaitForFixedUpdate();
         }
         if (this.a1.Attack())
         {
             this.anim.SetTrigger("Attack");
-            rb.velocity = rb.velocity * 2;
+            //rb.AddRelativeForce(new Vector2(;
         }
        
         yield return new WaitForSeconds(2);
@@ -75,7 +76,7 @@ public class CentaurScript : CreatureCore {
             EnemyMovement.Strafe(player, rb, speed, startStrafe);
             yield return null;
         }
-        rb.velocity = rb.velocity * 0;
+        rb.velocity = rb.velocity * 0;*/
         StartCoroutine("CentaurRoutine");
     }
     public override void OnHit() {

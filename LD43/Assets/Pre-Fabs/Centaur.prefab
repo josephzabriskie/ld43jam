@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4578520186232970}
   - component: {fileID: 60933413186273422}
-  - component: {fileID: 114811817395905410}
+  - component: {fileID: 114270377891958936}
   m_Layer: 9
   m_Name: SwordAttack1 (1)
   m_TagString: Untagged
@@ -67,14 +67,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1332920880236306}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.20910665, w: -0.9778929}
+  m_LocalPosition: {x: 3.41, y: -2.0743456, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4578520186232970}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -155.86}
 --- !u!50 &50096890863593002
 Rigidbody2D:
   serializedVersion: 4
@@ -111,7 +111,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.75, y: 2.75}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 2.75, y: 2.75}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -155,14 +155,17 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.9073677, y: 1.2381232}
-      - {x: 0.5481236, y: 1.628673}
-      - {x: -0.027235031, y: 1.677481}
-      - {x: -0.57683635, y: 1.5907159}
-      - {x: -0.9149265, y: 1.2917746}
-      - {x: -0.4474163, y: 0.18523967}
-      - {x: 0.022247434, y: 0.2028364}
-      - {x: 0.40456617, y: 0.14880109}
+    - - {x: 1.2914069, y: 0.7178576}
+      - {x: 1.1052501, y: 1.2936165}
+      - {x: 0.59226716, y: 1.7915139}
+      - {x: -0.036096066, y: 1.9794172}
+      - {x: -0.5859648, y: 1.8062657}
+      - {x: -1.0391383, y: 1.4435608}
+      - {x: -1.2561916, y: 1.1070629}
+      - {x: -1.2764257, y: 0.7425113}
+      - {x: -0.5813187, y: 0.65855753}
+      - {x: -0.013945242, y: 0.593917}
+      - {x: 0.418593, y: 0.65194017}
 --- !u!95 &95492061659141290
 Animator:
   serializedVersion: 3
@@ -195,7 +198,7 @@ MonoBehaviour:
   speed: 2
   rotateAmount: 2
   rotateSpeed: 2
---- !u!114 &114811817395905410
+--- !u!114 &114270377891958936
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,9 +206,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1487202216566112}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0375ea1b0b728e544a1eb88edda8ae3e, type: 3}
+  m_Script: {fileID: 11500000, guid: b237dae592f600747a6d3723262acbd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementFreeze: 0
   shotDelay: 0.5
 --- !u!212 &212297067808882434
 SpriteRenderer:
@@ -242,7 +246,7 @@ SpriteRenderer:
   m_SortingLayerID: 665963791
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300026, guid: 4c3f2a40a6cec3242b66bcaeea6849b6, type: 3}
+  m_Sprite: {fileID: 21300018, guid: 8f2faa694b94f414e8b074c6e782d3f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
