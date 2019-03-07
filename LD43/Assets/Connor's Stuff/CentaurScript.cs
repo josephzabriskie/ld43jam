@@ -13,6 +13,8 @@ public class CentaurScript : CreatureCore {
     private float startTime;
     public GameObject nodes;
     public int nodeIndex;
+    Ray centaurRay;
+    RaycastHit centaurRayHit;
 
     Animator anim;
     CentaurAttack a1;
@@ -36,15 +38,17 @@ public class CentaurScript : CreatureCore {
                 damagebreak = false;
             }
         }
-        if(ProximityCheck(player.transform.position, rb, 7))
+        if(ProximityCheck(player.transform.position, rb, 7) && !isActive)
         {
+            this.LocateClosestNode();
             StartCoroutine("CentaurRoutine");
+            isActive = true;
         }
     }
 
     IEnumerator CentaurRoutine() {
-        while (!ProximityCheck(player.transform.position, rb, 7))
-            yield return new WaitForFixedUpdate();
+        //while (!ProximityCheck(player.transform.position, rb, 7))
+            //yield return new WaitForFixedUpdate();
 
          this.anim.SetBool("Run", true);
         /* while (!ProximityCheck(player.transform.position, rb, 5)) {
@@ -82,19 +86,44 @@ public class CentaurScript : CreatureCore {
              yield return null;
          }
          rb.velocity = rb.velocity * 0;*/
-        LocateClosestNode();
-        yield return new WaitForSeconds(2);
-        for (int i = 0; i < 100; i++)
+
+
+        this.LocateClosestNode();
+        for (int i = 0; i < 4; i++)
         {
 
-            //Debug.Log(nodeIndex);
+           
             while (!ProximityCheck(GetCurrentNode(nodeIndex).position, this.rb, .5f))
             {
-                EnemyMovement.MoveTowardsTarget(GetCurrentNode(nodeIndex).gameObject, rb, speed * 3);
-                yield return new WaitForSeconds(.5f);
+                EnemyMovement.MoveTowardsTarget(GetCurrentNode(nodeIndex).gameObject, rb, speed * 4);
+                yield return new WaitForFixedUpdate();
             }
             nodeIndex++;
         }
+        int layermask = 1 << 12;
+        centaurRay = new Ray(transform.position, (player.transform.position - transform.position)/ (player.transform.position - transform.position).magnitude);
+        Physics.Raycast(centaurRay, out centaurRayHit,layermask);
+        if(centaurRayHit.collider == player.GetComponent<Collider>())
+        {
+            Vector3 target = player.transform.position;
+            while (!ProximityCheck(player.transform.position, rb, 4f))
+            {
+
+                EnemyMovement.Dash(target, rb, speed*2);
+                if (ProximityCheck(target, rb, 4f))
+                {
+                    target = player.transform.position;
+                }
+                yield return new WaitForFixedUpdate();
+            }
+            if (this.a1.Attack())
+            {
+                this.anim.SetTrigger("Attack");
+                //rb.AddRelativeForce(new Vector2(;
+                yield return new WaitForSeconds(.75f);
+            }
+        }
+
 
         StartCoroutine("CentaurRoutine");
     }
@@ -135,7 +164,7 @@ public class CentaurScript : CreatureCore {
         int closestIndex = 0;
          float distance = 0;
          float maxDistance = 10;
-        // this.nodeIndex = 0;
+         this.nodeIndex = 0;
          while(nodeIndex != nodes.transform.childCount)
          {
              distance = Vector3.Distance(this.transform.position, nodes.transform.GetChild(nodeIndex).position);
@@ -147,7 +176,8 @@ public class CentaurScript : CreatureCore {
              nodeIndex++;
          }
 
-         //nodeIndex = closestIndex;
+         nodeIndex = closestIndex;
+        
     }
 }
 
